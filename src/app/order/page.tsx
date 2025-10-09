@@ -143,9 +143,9 @@ export default function OrderPage() {
       <div className="container mx-auto px-6 py-8">
         <div className="flex space-x-1 bg-white rounded-xl p-2 shadow-lg mb-8">
           {[
-            { id: 'new-order', label: 'New Order', icon: '🛒' },
-            { id: 'order-history', label: 'Order History', icon: '📋' },
-            { id: 'track-order', label: 'Track Order', icon: '📍' }
+            { id: 'new-order', label: 'New Order', icon: '' },
+            { id: 'order-history', label: 'Order History', icon: '' },
+            { id: 'track-order', label: 'Track Order', icon: '' }
           ].map(tab => (
             <button
               key={tab.id}
@@ -169,7 +169,7 @@ export default function OrderPage() {
             <div className="lg:col-span-2">
               <div className="bg-white rounded-2xl shadow-xl p-6 mb-6">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-                  <span className="text-[#AD5618]">🛍️</span>
+                  <span className="text-[#AD5618]"></span>
                   Select Products
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -213,7 +213,7 @@ export default function OrderPage() {
               {/* Order Form */}
               <div className="bg-white rounded-2xl shadow-xl p-6">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-                  <span className="text-[#AD5618]">👤</span>
+                  <span className="text-[#AD5618]"></span>
                   Personal Information
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -325,7 +325,7 @@ export default function OrderPage() {
               {/* Order Summary */}
               <div className="bg-white rounded-2xl shadow-xl p-6">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-                  <span className="text-[#AD5618]">📋</span>
+                  <span className="text-[#AD5618]"></span>
                   Order Summary
                 </h2>
                 {selectedProducts.length === 0 ? (
@@ -385,7 +385,7 @@ export default function OrderPage() {
               {/* Payment Methods */}
               <div className="bg-white rounded-2xl shadow-xl p-6">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
-                  <span className="text-[#AD5618]">💳</span>
+                  <span className="text-[#AD5618]"></span>
                   Payment Method
                 </h2>
                 <div className="space-y-4">
