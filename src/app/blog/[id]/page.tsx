@@ -21,10 +21,11 @@ const staggerContainer = {
   }
 };
 
-export default function BlogDetailPage({ params }: { params: { id: string } }) {
+export default function BlogDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = React.use(params);
   // Sample blog data - in a real app, this would come from an API or database
   const blogPost = {
-    id: params.id,
+    id: resolvedParams.id,
     title: "The Art of Traditional Basket Weaving in Rwanda",
     subtitle: "Discover the ancient techniques and cultural significance behind Rwanda's traditional basket weaving",
     content: `

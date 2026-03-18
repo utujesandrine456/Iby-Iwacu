@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,8 +21,9 @@ const staggerContainer = {
   }
 };
 
-export default function ProductDetail({ params }: { params: { id: string } }) {
-  console.log("Product ID:", params.id);
+export default function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = React.use(params);
+  console.log("Product ID:", resolvedParams.id);
   const title = "Handcrafted Agaseke Basket";
   const price = 89.99;
   const compareAt = 120.00;
