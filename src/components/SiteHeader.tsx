@@ -28,18 +28,13 @@ export default function SiteHeader() {
     return language === 'en' ? 'English' : 'Kinyarwanda';
   };
 
-  const getLanguageLabel = () => {
-    return language === 'en' ? 'English' : 'Kinyarwanda';
-  };
-
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`border-b border-black/5 bg-white/95 backdrop-blur-md sticky top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'shadow-lg py-2' : 'py-3'
-      }`}
+      className={`border-b border-black/5 bg-white/95 backdrop-blur-md sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-lg py-2' : 'py-3'
+        }`}
     >
       <div className="container flex h-14 items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2 group">
@@ -47,11 +42,11 @@ export default function SiteHeader() {
             whileHover={{ rotate: 360 }}
             transition={{ duration: 0.6 }}
             src="/Logoibyiwacu.png"
-            alt="Iby'Iwacu"
+            alt="Iby&apos;Iwacu"
             className="h-8 w-auto"
           />
           <h1 className="text-3xl text-black font-bold">
-            Iby' <span className="text-[#cf671c] group-hover:text-[#AD5618] transition-colors">Iwacu</span>
+            Iby&apos; <span className="text-[#cf671c] group-hover:text-[#AD5618] transition-colors">Iwacu</span>
           </h1>
         </Link>
         <nav className="hidden md:flex items-center font-medium text-black gap-10 text-normal">
@@ -106,14 +101,14 @@ export default function SiteHeader() {
         <div className="flex items-center gap-4">
           {/* Cart Icon */}
           <Link href="/cart" className="relative p-2 cursor-pointer hover:bg-gray-100 rounded-lg transition-colors group">
-            <ShoppingBasket color="#000"/>
+            <ShoppingBasket color="#000" />
           </Link>
 
           {/* Auth area */}
           {user ? (
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-[#AD5618] text-white flex items-center justify-center text-sm font-semibold">
-                {(user.fullName || user.email).slice(0,1).toUpperCase()}
+                {(user.fullName || user.email).slice(0, 1).toUpperCase()}
               </div>
               <button onClick={logout} className="text-sm text-[#AD5618] hover:text-[#91530A] font-semibold">Logout</button>
             </div>

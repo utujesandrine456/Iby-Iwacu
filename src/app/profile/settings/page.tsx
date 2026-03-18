@@ -1,17 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { 
-  User, 
-  Lock, 
-  MapPin, 
-  Bell, 
-  Shield, 
-  Palette, 
-  Eye, 
+import {
+  User,
+  Lock,
+  MapPin,
+  Bell,
+  Shield,
+  Palette,
+  Eye,
   EyeOff,
   Camera,
-  CheckCircle,
   Save
 } from "lucide-react";
 
@@ -381,11 +380,10 @@ export default function AccountSettingsPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center px-6 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${
-                activeTab === tab.id
+              className={`flex items-center px-6 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${activeTab === tab.id
                   ? `bg-gradient-to-r ${tab.color} text-white shadow-lg`
                   : "bg-white text-gray-600 hover:bg-gray-50 border border-gray-200"
-              }`}
+                }`}
             >
               <tab.icon className="w-5 h-5 mr-2" />
               {tab.label}

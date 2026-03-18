@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState('cart');
@@ -77,7 +78,7 @@ export default function ProfilePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-     
+
 
       {/* Main Content */}
       <div className="container mx-auto px-6 py-8">
@@ -86,22 +87,24 @@ export default function ProfilePage() {
           <div className="text-center">
             {/* Profile Picture */}
             <div className="relative mb-6">
-              <img 
-                src="/Basket weaving rwenzori mountains.png" 
-                alt="Marie uwimana" 
-                className="w-32 h-32 rounded-full object-cover mx-auto border-4 border-[#AD5618]"
+              <Image
+                src="/Basket weaving rwenzori mountains.png"
+                alt="Marie uwimana"
+                width={128}
+                height={128}
+                className="rounded-full object-cover mx-auto border-4 border-[#AD5618]"
               />
             </div>
-            
+
             {/* Name and Title */}
             <h1 className="text-3xl font-bold text-gray-800 mb-2">Marie uwimana</h1>
             <p className="text-lg text-gray-600 mb-4">Traditional Basket weaver & Artisan</p>
-            
+
             {/* Bio */}
             <p className="text-gray-700 text-md mb-6 max-w-2xl mx-auto">
               Creating authentic Rwandan baskets using traditional effective techniques passed down
             </p>
-            
+
             {/* Action Buttons */}
             <div className="flex items-center justify-center gap-4 mb-8">
               <button className="bg-[#AD5618] text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 hover:bg-[#91530A] transition-colors">
@@ -118,7 +121,7 @@ export default function ProfilePage() {
                 share profile
               </button>
             </div>
-            
+
             {/* Statistics */}
             <div className="grid grid-cols-3 gap-8 max-w-md mx-auto">
               <div className="text-center">
@@ -146,11 +149,10 @@ export default function ProfilePage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 py-3 px-6 rounded-lg font-medium transition-all duration-300 ${
-                activeTab === tab.id
+              className={`flex-1 py-3 px-6 rounded-lg font-medium transition-all duration-300 ${activeTab === tab.id
                   ? 'bg-[#AD5618] text-white shadow-lg'
                   : 'text-gray-600 hover:text-[#AD5618] hover:bg-orange-50'
-              }`}
+                }`}
             >
               {tab.label}
               {tab.count > 0 && (
@@ -169,15 +171,16 @@ export default function ProfilePage() {
               <h2 className="text-2xl font-bold text-gray-800">Added to cart</h2>
               <span className="text-gray-600">{cartItems.length} items added</span>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {cartItems.map(item => (
                 <div key={item.id} className="bg-gray-50 rounded-xl p-4 hover:shadow-lg transition-all duration-300">
-                  <div className="relative mb-3">
-                    <img 
-                      src={item.image} 
+                  <div className="relative mb-3 h-32 w-full">
+                    <Image
+                      src={item.image}
                       alt={item.name}
-                      className="w-full h-32 object-cover rounded-lg"
+                      fill
+                      className="object-cover rounded-lg"
                     />
                   </div>
                   <h3 className="font-semibold text-gray-800 mb-2">{item.name}</h3>
@@ -202,15 +205,18 @@ export default function ProfilePage() {
               <h2 className="text-2xl font-bold text-gray-800">Recent orders</h2>
               <a href="#" className="text-[#AD5618] hover:text-[#91530A] font-medium">see all</a>
             </div>
-            
+
             <div className="space-y-4">
               {recentOrders.map(order => (
                 <div key={order.id} className="flex items-center gap-4 p-4 border border-gray-200 rounded-xl hover:shadow-md transition-all duration-300">
-                  <img 
-                    src={order.image} 
-                    alt={order.name}
-                    className="w-20 h-20 object-cover rounded-lg"
-                  />
+                  <div className="relative w-20 h-20">
+                    <Image
+                      src={order.image}
+                      alt={order.name}
+                      fill
+                      className="object-cover rounded-lg"
+                    />
+                  </div>
                   <div className="flex-1">
                     <h3 className="font-semibold text-gray-800">{order.name}</h3>
                     <p className="text-gray-600 text-sm">{order.date}</p>

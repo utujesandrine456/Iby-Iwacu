@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import Image from "next/image";
 
 export default function MeetArtisanPage() {
   // Sample featured products data
@@ -71,7 +71,7 @@ export default function MeetArtisanPage() {
     }
   ];
 
-  
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Main Content */}
@@ -81,22 +81,24 @@ export default function MeetArtisanPage() {
           <div className="text-center">
             {/* Profile Picture */}
             <div className="relative mb-6">
-              <img 
-                src="/Basket weaving rwenzori mountains.png" 
-                alt="Marie uwimana" 
-                className="w-32 h-32 rounded-full object-cover mx-auto border-4 border-[#AD5618]"
+              <Image
+                src="/Basket weaving rwenzori mountains.png"
+                alt="Marie uwimana"
+                width={128}
+                height={128}
+                className="rounded-full object-cover mx-auto border-4 border-[#AD5618]"
               />
             </div>
-            
+
             {/* Name and Title */}
             <h1 className="text-3xl font-bold text-gray-800 mb-2">Marie uwimana</h1>
             <p className="text-lg text-gray-600 mb-4">Traditional Basket weaver & Artisan</p>
-            
+
             {/* Bio */}
             <p className="text-gray-700 mb-6 text-md max-w-2xl mx-auto">
               Creating authentic Rwandan baskets using traditional effective techniques passed down
             </p>
-            
+
             {/* Action Buttons */}
             <div className="flex items-center justify-center gap-4 mb-8">
               <button className="bg-[#AD5618] text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 hover:bg-[#91530A] transition-colors">
@@ -112,7 +114,7 @@ export default function MeetArtisanPage() {
                 Follow
               </button>
             </div>
-            
+
             {/* Statistics */}
             <div className="grid grid-cols-3 gap-8 max-w-md mx-auto">
               <div className="text-center">
@@ -134,15 +136,16 @@ export default function MeetArtisanPage() {
         {/* Featured Products Section */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Featured products</h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {featuredProducts.map(product => (
               <div key={product.id} className="bg-gray-50 rounded-xl p-4 hover:shadow-lg transition-all duration-300">
-                <div className="relative mb-3">
-                  <img 
-                    src={product.image} 
+                <div className="relative mb-3 h-32 w-full">
+                  <Image
+                    src={product.image}
                     alt={product.name}
-                    className="w-full h-32 object-cover rounded-lg"
+                    fill
+                    className="object-cover rounded-lg"
                   />
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-2">{product.name}</h3>
@@ -170,15 +173,16 @@ export default function MeetArtisanPage() {
             <h2 className="text-2xl font-bold text-gray-800">Meet other artisans</h2>
             <a href="#" className="text-[#AD5618] hover:text-[#91530A] font-medium">see all</a>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-6">
             {otherArtisans.map(artisan => (
               <div key={artisan.id} className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
-                <div className="relative mb-4">
-                  <img 
-                    src={artisan.image} 
+                <div className="relative mb-4 w-20 h-20 mx-auto">
+                  <Image
+                    src={artisan.image}
                     alt={artisan.name}
-                    className="w-20 h-20 rounded-full object-cover mx-auto border-2 border-[#AD5618]"
+                    fill
+                    className="rounded-full object-cover border-2 border-[#AD5618]"
                   />
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-2">{artisan.name}</h3>

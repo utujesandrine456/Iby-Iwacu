@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Search } from "lucide-react";
 
 const fadeInUp = {
@@ -23,7 +24,7 @@ const staggerContainer = {
 export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
-  
+
   const products = [
     {
       id: 1,
@@ -108,14 +109,16 @@ export default function ProductsPage() {
       <section className="relative min-h-[80vh] flex items-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
-          <img 
-            src="/Homepageimagebackground.png" 
-            alt="Premium Rwandan Products" 
-            className="w-full h-full object-cover"
+          <Image
+            src="/Homepageimagebackground.png"
+            alt="Premium Rwandan Products"
+            fill
+            className="object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>
-        
+
         {/* Animated Accent Elements */}
         <motion.div
           className="absolute top-20 right-10 w-72 h-72 bg-[#AD5618]/10 rounded-full blur-3xl"
@@ -145,7 +148,7 @@ export default function ProductsPage() {
             ease: "easeInOut"
           }}
         />
-        
+
         {/* Floating particles */}
         {[...Array(5)].map((_, i) => (
           <motion.div
@@ -197,7 +200,7 @@ export default function ProductsPage() {
               >
                 Discover authentic handcrafted products from talented Rwandan artisans. Each piece tells a unique story of tradition, culture, and exceptional craftsmanship.
               </motion.p>
-              
+
               {/* Enhanced Search Bar */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -206,9 +209,9 @@ export default function ProductsPage() {
                 className="max-w-2xl mx-auto mb-10"
               >
                 <div className="relative">
-                  <input 
-                    type="text" 
-                    placeholder="Search for authentic Rwandan products..." 
+                  <input
+                    type="text"
+                    placeholder="Search for authentic Rwandan products..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full px-8 py-4 text-gray-900 rounded-full border-4 border-white/20 focus:outline-none focus:ring-4 focus:ring-white/30 focus:border-white/40 shadow-2xl bg-white/95 backdrop-blur-sm text-xl placeholder-gray-500"
@@ -223,7 +226,7 @@ export default function ProductsPage() {
                     </svg>
                   </motion.button>
                 </div>
-                
+
                 {/* Search Stats */}
                 <motion.p
                   initial={{ opacity: 0 }}
@@ -232,7 +235,7 @@ export default function ProductsPage() {
                   className="mt-4 text-white/80 text-lg drop-shadow-md"
                 >
                   {searchQuery ? (
-                    <>Showing <span className="font-bold">{filteredProducts.length}</span> results for "{searchQuery}"</>
+                    <>Showing <span className="font-bold">{filteredProducts.length}</span> results for &quot;{searchQuery}&quot;</>
                   ) : (
                     <>Browse <span className="font-bold">{products.length}</span> authentic handcrafted products</>
                   )}
@@ -308,11 +311,10 @@ export default function ProductsPage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`px-6 py-3 rounded-full font-semibold text-base transition-all duration-300 ${
-                    selectedCategory === category.id
+                  className={`px-6 py-3 rounded-full font-semibold text-base transition-all duration-300 ${selectedCategory === category.id
                       ? "bg-[#AD5618] text-white shadow-lg"
                       : "bg-white text-gray-700 hover:bg-gray-100 border-2 border-gray-200"
-                  }`}
+                    }`}
                 >
                   {category.name} ({category.count})
                 </motion.button>
@@ -346,15 +348,19 @@ export default function ProductsPage() {
                   whileHover={{ y: -10, scale: 1.02 }}
                   className="group relative rounded-3xl border-2 border-gray-100 bg-white shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-500"
                 >
-                  {/* Image */}
                   <div className="relative aspect-square overflow-hidden">
-                    <motion.img
+                    <motion.div
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.5 }}
-                      src={product.image}
-                      alt={product.title}
-                      className="h-full w-full object-cover"
-                    />
+                      className="w-full h-full relative"
+                    >
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </motion.div>
                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                     {/* Discount Badge */}
@@ -397,7 +403,7 @@ export default function ProductsPage() {
                     <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#AD5618] transition-colors">
                       {product.title}
                     </h3>
-                    
+
                     {/* Rating */}
                     <div className="flex items-center gap-2 mb-3">
                       <div className="flex items-center">

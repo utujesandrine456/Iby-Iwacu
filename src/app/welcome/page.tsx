@@ -16,7 +16,7 @@ export default function WelcomePage() {
           <div className="grid lg:grid-cols-2">
             <div className="p-10 lg:p-14">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-[#AD5618] text-sm font-semibold mb-4">
-                <Sparkles className="w-4 h-4" /> Welcome to Iby'Iwacu
+                <Sparkles className="w-4 h-4" /> Welcome to Iby&apos;Iwacu
               </div>
               <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
                 Great to have you, <span className="text-[#AD5618]">{name}</span>!

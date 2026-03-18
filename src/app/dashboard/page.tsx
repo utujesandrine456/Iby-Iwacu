@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import Link from "next/link";
 import { ArrowUpRight, Users, ShoppingBag, DollarSign, TrendingUp, PlusCircle, Settings, CreditCard, Package2 } from "lucide-react";
 
 type Metric = {
@@ -73,12 +74,12 @@ export default function DashboardPage() {
             <p className="text-gray-600">Overview of your store at a glance</p>
           </div>
           <div className="flex gap-2">
-            <a href="/products" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 transition-colors">
+            <Link href="/products" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 transition-colors">
               <Package2 className="w-4 h-4" /> Manage Products
-            </a>
-            <a href="/checkout/personal" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#AD5618] to-[#91530A] text-white shadow-lg hover:from-[#91530A] hover:to-[#7A4A09] transition-colors">
+            </Link>
+            <Link href="/checkout/personal" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#AD5618] to-[#91530A] text-white shadow-lg hover:from-[#91530A] hover:to-[#7A4A09] transition-colors">
               <PlusCircle className="w-4 h-4" /> Create Order
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -156,7 +157,7 @@ export default function DashboardPage() {
           <section className="bg-white rounded-2xl shadow-xl border border-white/60 p-6 lg:col-span-2">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg font-semibold text-gray-900">Recent Orders</h2>
-              <a href="/order" className="text-[#AD5618] hover:text-[#91530A] text-sm font-medium">View all</a>
+              <Link href="/order" className="text-[#AD5618] hover:text-[#91530A] text-sm font-medium">View all</Link>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -177,15 +178,14 @@ export default function DashboardPage() {
                       <td className="py-3 text-gray-600">{o.date}</td>
                       <td className="py-3 font-medium">${o.total.toFixed(2)}</td>
                       <td className="py-3">
-                        <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${
-                          o.status === "Delivered"
+                        <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${o.status === "Delivered"
                             ? "bg-green-100 text-green-700"
                             : o.status === "Shipped"
-                            ? "bg-blue-100 text-blue-700"
-                            : o.status === "Processing"
-                            ? "bg-amber-100 text-amber-700"
-                            : "bg-red-100 text-red-700"
-                        }`}>
+                              ? "bg-blue-100 text-blue-700"
+                              : o.status === "Processing"
+                                ? "bg-amber-100 text-amber-700"
+                                : "bg-red-100 text-red-700"
+                          }`}>
                           {o.status}
                         </span>
                       </td>
@@ -199,22 +199,22 @@ export default function DashboardPage() {
           <section className="bg-white rounded-2xl shadow-xl border border-white/60 p-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h2>
             <div className="grid gap-3">
-              <a href="/products" className="inline-flex items-center justify-between gap-3 px-4 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">
+              <Link href="/products" className="inline-flex items-center justify-between gap-3 px-4 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">
                 <span className="inline-flex items-center gap-2 text-gray-800"><Package2 className="w-4 h-4 text-[#AD5618]" /> Add Product</span>
                 <ArrowUpRight className="w-4 h-4 text-gray-400" />
-              </a>
-              <a href="/order" className="inline-flex items-center justify-between gap-3 px-4 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">
+              </Link>
+              <Link href="/order" className="inline-flex items-center justify-between gap-3 px-4 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">
                 <span className="inline-flex items-center gap-2 text-gray-800"><ShoppingBag className="w-4 h-4 text-[#AD5618]" /> New Order</span>
                 <ArrowUpRight className="w-4 h-4 text-gray-400" />
-              </a>
-              <a href="/payment-methods" className="inline-flex items-center justify-between gap-3 px-4 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">
+              </Link>
+              <Link href="/payment-methods" className="inline-flex items-center justify-between gap-3 px-4 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">
                 <span className="inline-flex items-center gap-2 text-gray-800"><CreditCard className="w-4 h-4 text-[#AD5618]" /> Payment Methods</span>
                 <ArrowUpRight className="w-4 h-4 text-gray-400" />
-              </a>
-              <a href="/profile/settings" className="inline-flex items-center justify-between gap-3 px-4 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">
+              </Link>
+              <Link href="/profile/settings" className="inline-flex items-center justify-between gap-3 px-4 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors">
                 <span className="inline-flex items-center gap-2 text-gray-800"><Settings className="w-4 h-4 text-[#AD5618]" /> Settings</span>
                 <ArrowUpRight className="w-4 h-4 text-gray-400" />
-              </a>
+              </Link>
             </div>
           </section>
         </div>

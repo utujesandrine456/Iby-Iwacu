@@ -3,7 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Target, Star, Users, Heart, MapPin, Mail, Phone, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Target, Star, Users, Heart, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
@@ -27,14 +28,15 @@ export default function AboutPage() {
       <section className="relative min-h-[100vh] flex items-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
-          <img 
-            src="/about.jpg" 
-            alt="Rwandan Artisans Community" 
-            className="w-full h-full object-cover"
+          <Image
+            src="/about.jpg"
+            alt="Rwandan Artisans Community"
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>
-        
+
         {/* Animated Accent Elements */}
         <motion.div
           className="absolute top-20 right-10 w-72 h-72 bg-[#AD5618]/10 rounded-full blur-3xl"
@@ -64,7 +66,7 @@ export default function AboutPage() {
             ease: "easeInOut"
           }}
         />
-        
+
         {/* Floating particles */}
         {[...Array(5)].map((_, i) => (
           <motion.div
@@ -105,7 +107,7 @@ export default function AboutPage() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  About <span className="text-[#eb8034]">Iby'Iwacu</span>
+                  About <span className="text-[#eb8034]">Iby&apos;Iwacu</span>
                 </motion.span>
               </motion.h1>
 
@@ -114,7 +116,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-2xl opacity-90 max-w-4xl mx-auto leading-relaxed mb-10 drop-shadow-md"
               >
-                Connecting Rwanda's rich cultural heritage with the world through authentic craftsmanship, 
+                Connecting Rwanda&apos;s rich cultural heritage with the world through authentic craftsmanship,
                 sustainable practices, and meaningful partnerships with local artisans.
               </motion.p>
 
@@ -215,17 +217,17 @@ export default function AboutPage() {
               <h2 className="text-5xl font-extrabold text-gray-900 mb-8">Our Story</h2>
               <div className="space-y-6 text-xl text-gray-600 leading-relaxed">
                 <p>
-                  Iby'Iwacu, meaning "Our Heritage" in Kinyarwanda, was born from a vision to bridge 
-                  the gap between Rwanda's talented artisans and global markets. We believe that every 
+                  Iby&apos;Iwacu, meaning &quot;Our Heritage&quot; in Kinyarwanda, was born from a vision to bridge
+                  the gap between Rwanda&apos;s talented artisans and global markets. We believe that every
                   handcrafted piece tells a story of tradition, resilience, and hope.
                 </p>
                 <p>
-                  Founded in 2020, our platform has grown to support over 100 artisans across Rwanda, 
-                  helping them showcase their incredible skills while preserving centuries-old techniques 
+                  Founded in 2020, our platform has grown to support over 100 artisans across Rwanda,
+                  helping them showcase their incredible skills while preserving centuries-old techniques
                   for future generations.
                 </p>
                 <p>
-                  Today, we're proud to be a catalyst for positive change, creating sustainable livelihoods 
+                  Today, we&apos;re proud to be a catalyst for positive change, creating sustainable livelihoods
                   while sharing the beauty of Rwandan culture with the world.
                 </p>
               </div>
@@ -241,18 +243,18 @@ export default function AboutPage() {
                   whileHover={{ scale: 1.05, rotate: -2 }}
                   className="relative h-64 rounded-3xl overflow-hidden shadow-2xl"
                 >
-                  <img src="/hand woven baskets 1.png" alt="Artisan at work" className="w-full h-full object-cover" />
+                  <Image src="/hand woven baskets 1.png" alt="Artisan at work" fill className="object-cover" />
                   <div className="absolute inset-0 bg-black/20" />
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05, rotate: 2 }}
                   className="relative h-64 rounded-3xl overflow-hidden shadow-2xl mt-8"
                 >
-                  <img src="/community 1.png" alt="Community" className="w-full h-full object-cover" />
+                  <Image src="/community 1.png" alt="Community" fill className="object-cover" />
                   <div className="absolute inset-0 bg-black/20" />
                 </motion.div>
               </div>
-              
+
               {/* Floating Stats */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
@@ -289,8 +291,8 @@ export default function AboutPage() {
               </div>
               <h3 className="text-3xl font-extrabold mb-6">Our Mission</h3>
               <p className="text-xl leading-relaxed opacity-90">
-                To empower Rwandan artisans by connecting them with global markets, 
-                ensuring fair compensation while preserving traditional craftsmanship 
+                To empower Rwandan artisans by connecting them with global markets,
+                ensuring fair compensation while preserving traditional craftsmanship
                 and promoting sustainable economic growth.
               </p>
             </motion.div>
@@ -305,8 +307,8 @@ export default function AboutPage() {
               </div>
               <h3 className="text-3xl font-extrabold text-gray-900 mb-6">Our Vision</h3>
               <p className="text-xl text-gray-600 leading-relaxed">
-                To become the leading platform for authentic African craftsmanship, 
-                creating a world where traditional arts thrive in modern markets 
+                To become the leading platform for authentic African craftsmanship,
+                creating a world where traditional arts thrive in modern markets
                 and cultural heritage is celebrated globally.
               </p>
             </motion.div>
@@ -389,7 +391,7 @@ export default function AboutPage() {
           >
             <h2 className="text-5xl font-extrabold mb-6">Our Impact</h2>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              Together with our artisan partners, we're creating positive change across Rwanda's creative communities.
+              Together with our artisan partners, we&apos;re creating positive change across Rwanda&apos;s creative communities.
             </p>
           </motion.div>
 
@@ -527,7 +529,7 @@ export default function AboutPage() {
           >
             <h2 className="text-5xl font-extrabold text-gray-900 mb-6">Join Our Journey</h2>
             <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
-              Be part of preserving Rwanda's cultural heritage while supporting sustainable livelihoods for talented artisans.
+              Be part of preserving Rwanda&apos;s cultural heritage while supporting sustainable livelihoods for talented artisans.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CreditCard, Star, Trash2, Plus, CheckCircle, Edit, Shield, Wallet } from "lucide-react";
+import { CreditCard, Trash2, Plus, CheckCircle, Edit, Shield, Wallet } from "lucide-react";
 
 type Card = {
   id: number;

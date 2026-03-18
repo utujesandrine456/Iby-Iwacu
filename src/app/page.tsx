@@ -3,6 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
+
 
 // Animation variants
 const fadeInUp = {
@@ -25,14 +27,7 @@ const staggerContainer = {
   }
 };
 
-const floatingAnimation = {
-  y: [0, -20, 0],
-  transition: {
-    duration: 3,
-    repeat: Infinity,
-    ease: "easeInOut"
-  }
-};
+
 
 export default function Home() {
   const featuredProducts = [
@@ -87,14 +82,15 @@ export default function Home() {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
-          <img 
-            src="/Rwandan basket wall in Meg Biram's living room_.png" 
-            alt="Rwandan Baskets" 
-            className="w-full h-full object-cover"
+          <Image
+            src="/Rwandan basket wall in Meg Biram's living room_.png"
+            alt="Rwandan Baskets"
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>
-        
+
         {/* Animated Accent Elements */}
         <motion.div
           className="absolute top-20 right-10 w-72 h-72 bg-[#AD5618]/10 rounded-full blur-3xl"
@@ -124,7 +120,7 @@ export default function Home() {
             ease: "easeInOut"
           }}
         />
-        
+
         {/* Floating particles */}
         {[...Array(5)].map((_, i) => (
           <motion.div
@@ -269,7 +265,7 @@ export default function Home() {
                       }}
                       className="relative h-72 rounded-3xl overflow-hidden shadow-2xl border-4 border-white"
                     >
-                      <img src="/hand woven baskets 1.png" alt="Basket" className="w-full h-full object-cover" />
+                      <Image src="/hand woven baskets 1.png" alt="Basket" fill className="object-cover" />
                       <div className="absolute inset-0 bg-black/30" />
                       <motion.div
                         className="absolute bottom-6 left-6 text-white"
@@ -296,7 +292,7 @@ export default function Home() {
                       }}
                       className="relative h-72 rounded-3xl overflow-hidden shadow-2xl mt-10 border-4 border-white"
                     >
-                      <img src="/Black & White Imigongo Rwanda Painting_ African Handcraft Wall Decor_ Traditional African Art Work_ Unique African Pattern.png" alt="Art" className="w-full h-full object-cover" />
+                      <Image src="/Black & White Imigongo Rwanda Painting_ African Handcraft Wall Decor_ Traditional African Art Work_ Unique African Pattern.png" alt="Art" fill className="object-cover" />
                       <div className="absolute inset-0 bg-black/30" />
                       <motion.div
                         className="absolute bottom-6 left-6 text-white"
@@ -309,7 +305,7 @@ export default function Home() {
                       </motion.div>
                     </motion.div>
                   </div>
-                  
+
                   {/* Floating Badge */}
                   <motion.div
                     animate={{
@@ -395,32 +391,31 @@ export default function Home() {
                 whileHover={{ y: -10, rotateY: 5 }}
                 className="group bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300"
               >
-                <div className="relative overflow-hidden">
-                  <motion.img
-                    whileHover={{ scale: 1.1, rotate: 2 }}
-                    transition={{ duration: 0.4 }}
+                <div className="relative h-56 w-full overflow-hidden">
+                  <Image
                     src={product.image}
                     alt={product.title}
-                    className="h-56 w-full object-cover"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <motion.div
-                    className="absolute top-3 left-3 bg-[#eb8034] text-white text-sm px-4 py-2 rounded-full font-bold"
-                    animate={{ scale: [1, 1.1, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    {product.discount}
-                  </motion.div>
-                  <motion.button
-                    whileHover={{ scale: 1.1, rotate: 360 }}
-                    whileTap={{ scale: 0.9 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute bottom-3 right-3 bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
-                  >
-                    <svg className="w-5 h-5 text-[#AD5618]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                    </svg>
-                  </motion.button>
                 </div>
+                <motion.div
+                  className="absolute top-3 left-3 bg-[#eb8034] text-white text-sm px-4 py-2 rounded-full font-bold"
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  {product.discount}
+                </motion.div>
+                <motion.button
+                  whileHover={{ scale: 1.1, rotate: 360 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute bottom-3 right-3 bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <svg className="w-5 h-5 text-[#AD5618]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                  </svg>
+                </motion.button>
                 <div className="p-5">
                   <h3 className="font-bold text-gray-900 mb-3 text-lg">{product.title}</h3>
                   <div className="flex items-center gap-2">
@@ -440,7 +435,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Categories Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50 relative overflow-hidden">
         <div className="container relative z-10">
           <motion.div
@@ -499,13 +493,12 @@ export default function Home() {
                 whileHover={{ y: -10, scale: 1.02, rotateY: 5 }}
                 className="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500"
               >
-                <div className="relative overflow-hidden">
-                  <motion.img
-                    whileHover={{ scale: 1.1, rotate: 2 }}
-                    transition={{ duration: 0.6 }}
+                <div className="relative h-80 w-full overflow-hidden">
+                  <Image
                     src={category.image}
                     alt={category.title}
-                    className="h-80 w-full object-cover"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
@@ -514,9 +507,8 @@ export default function Home() {
                     animate={{ y: [0, -5, 0] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    <span className={`inline-block px-4 py-2 rounded-full text-sm font-bold text-white ${
-                      index === 0 ? 'bg-[#eb8034]' : index === 1 ? 'bg-[#7c3aed]' : 'bg-[#059669]'
-                    }`}>
+                    <span className={`inline-block px-4 py-2 rounded-full text-sm font-bold text-white ${index === 0 ? 'bg-[#eb8034]' : index === 1 ? 'bg-[#7c3aed]' : 'bg-[#059669]'
+                      }`}>
                       {category.itemCount}
                     </span>
                   </motion.div>
@@ -586,7 +578,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Most Popular Products Section */}
       <section className="py-20 bg-white">
         <div className="container">
           <motion.div
@@ -628,13 +619,12 @@ export default function Home() {
                 whileHover={{ y: -8, scale: 1.03, rotateZ: 2 }}
                 className="group bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
               >
-                <div className="relative overflow-hidden">
-                  <motion.img
-                    whileHover={{ scale: 1.15, rotate: 3 }}
-                    transition={{ duration: 0.4 }}
+                <div className="relative aspect-square overflow-hidden">
+                  <Image
                     src={product.image}
                     alt={product.title}
-                    className="aspect-square w-full object-cover"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -797,13 +787,12 @@ export default function Home() {
                 whileHover={{ y: -10 }}
                 className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group cursor-pointer border-2 border-gray-100"
               >
-                <div className="relative overflow-hidden">
-                  <motion.img
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.5 }}
+                <div className="relative h-64 w-full overflow-hidden">
+                  <Image
                     src={post.image}
                     alt={post.title}
-                    className="h-64 w-full object-cover"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="inline-block px-4 py-2 rounded-full text-sm font-bold text-white bg-[#AD5618]">
@@ -888,7 +877,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center text-white"
           >
-            <h3 className="text-5xl font-extrabold mb-6">Stay Connected with Iby'Iwacu</h3>
+            <h3 className="text-5xl font-extrabold mb-6">Stay Connected with Iby&apos;Iwacu</h3>
             <p className="text-xl opacity-90 mb-10">
               Subscribe to our newsletter for exclusive offers, new arrivals, and artisan stories
             </p>
@@ -909,6 +898,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-    </div>
+    </div >
   );
 }

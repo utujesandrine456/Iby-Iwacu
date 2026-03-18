@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { MapPin, Mail, Phone, Facebook, Instagram, Twitter, Linkedin, Palette, Globe, Handshake, Heart, Clock, MessageCircle } from "lucide-react";
 
 const fadeInUp = {
@@ -37,7 +36,7 @@ export default function ContactPage() {
           }}
           className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
         />
-        
+
         <div className="container relative z-10">
           <motion.div
             initial="hidden"
@@ -48,8 +47,8 @@ export default function ContactPage() {
           >
             <h1 className="text-6xl font-extrabold mb-6">Get In <span className="text-[#eb8034]">Touch</span></h1>
             <p className="text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">
-              Iby'Iwacu connects local artisans to global markets with passion and reliability. 
-              We'd love to hear from you—whether you have questions, ideas, or want to collaborate with us.
+              Iby&apos;Iwacu connects local artisans to global markets with passion and reliability.
+              We&apos;d love to hear from you—whether you have questions, ideas, or want to collaborate with us.
             </p>
           </motion.div>
         </div>
@@ -68,7 +67,7 @@ export default function ContactPage() {
           >
             <h2 className="text-4xl font-extrabold text-gray-900 mb-6">Get In Touch With Us</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're here to help and answer any questions you might have. Choose the best way to reach us.
+              We&apos;re here to help and answer any questions you might have. Choose the best way to reach us.
             </p>
           </motion.div>
 
@@ -163,7 +162,7 @@ export default function ContactPage() {
               </div>
               <div className="mt-6 p-4 bg-green-50 rounded-2xl">
                 <p className="text-green-800 text-sm">
-                  <strong>Note:</strong> We're currently available for urgent inquiries 24/7 via email.
+                  <strong>Note:</strong> We&apos;re currently available for urgent inquiries 24/7 via email.
                 </p>
               </div>
             </motion.div>
@@ -228,7 +227,7 @@ export default function ContactPage() {
             >
               <h2 className="text-4xl font-extrabold text-gray-900 mb-6">Send Us a Message</h2>
               <p className="text-xl text-gray-600 mb-8">
-                Have a question or want to work together? Fill out the form below and we'll get back to you soon.
+                Have a question or want to work together? Fill out the form below and we&apos;ll get back to you soon.
               </p>
               <MessageForm />
             </motion.div>
@@ -240,7 +239,7 @@ export default function ContactPage() {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-4xl font-extrabold text-gray-900 mb-6">Why Choose Iby'Iwacu?</h2>
+                <h2 className="text-4xl font-extrabold text-gray-900 mb-6">Why Choose Iby&apos;Iwacu?</h2>
                 <div className="space-y-6">
                   {[
                     {
@@ -328,9 +327,9 @@ export default function ContactPage() {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Find Us in Kigali</h2>
-            <p className="text-xl text-gray-600">Located in the vibrant heart of Rwanda's capital city</p>
+            <p className="text-xl text-gray-600">Located in the vibrant heart of Rwanda&apos;s capital city</p>
           </motion.div>
-          
+
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -398,8 +397,8 @@ function MessageForm() {
   }
 
   return (
-    <motion.form 
-      onSubmit={onSubmit} 
+    <motion.form
+      onSubmit={onSubmit}
       className="space-y-8"
       initial="hidden"
       animate="visible"
@@ -419,11 +418,10 @@ function MessageForm() {
               key={type.value}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className={`relative flex flex-col items-center p-4 rounded-2xl border-2 cursor-pointer transition-all ${
-                formData.inquiryType === type.value
+              className={`relative flex flex-col items-center p-4 rounded-2xl border-2 cursor-pointer transition-all ${formData.inquiryType === type.value
                   ? 'border-[#AD5618] bg-[#AD5618]/5 text-[#AD5618]'
                   : 'border-gray-200 hover:border-gray-300 text-gray-700'
-              }`}
+                }`}
             >
               <input
                 type="radio"
@@ -446,23 +444,23 @@ function MessageForm() {
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <label className="block text-lg font-semibold text-gray-900 mb-3">First Name *</label>
-            <input 
+            <input
               name="firstName"
               value={formData.firstName}
               onChange={handleInputChange}
-              className="w-full rounded-2xl bg-white px-6 py-4 text-gray-900 border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#AD5618]/20 focus:border-[#AD5618] transition-all text-lg hover:border-gray-300" 
-              placeholder="John" 
+              className="w-full rounded-2xl bg-white px-6 py-4 text-gray-900 border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#AD5618]/20 focus:border-[#AD5618] transition-all text-lg hover:border-gray-300"
+              placeholder="John"
               required
             />
           </div>
           <div>
             <label className="block text-lg font-semibold text-gray-900 mb-3">Last Name *</label>
-            <input 
+            <input
               name="lastName"
               value={formData.lastName}
               onChange={handleInputChange}
-              className="w-full rounded-2xl bg-white px-6 py-4 text-gray-900 border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#AD5618]/20 focus:border-[#AD5618] transition-all text-lg hover:border-gray-300" 
-              placeholder="Doe" 
+              className="w-full rounded-2xl bg-white px-6 py-4 text-gray-900 border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#AD5618]/20 focus:border-[#AD5618] transition-all text-lg hover:border-gray-300"
+              placeholder="Doe"
               required
             />
           </div>
@@ -474,25 +472,25 @@ function MessageForm() {
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <label className="block text-lg font-semibold text-gray-900 mb-3">Email Address *</label>
-            <input 
+            <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full rounded-2xl bg-white px-6 py-4 text-gray-900 border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#AD5618]/20 focus:border-[#AD5618] transition-all text-lg hover:border-gray-300" 
-              placeholder="john@example.com" 
+              className="w-full rounded-2xl bg-white px-6 py-4 text-gray-900 border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#AD5618]/20 focus:border-[#AD5618] transition-all text-lg hover:border-gray-300"
+              placeholder="john@example.com"
               required
             />
           </div>
           <div>
             <label className="block text-lg font-semibold text-gray-900 mb-3">Phone Number</label>
-            <input 
+            <input
               type="tel"
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className="w-full rounded-2xl bg-white px-6 py-4 text-gray-900 border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#AD5618]/20 focus:border-[#AD5618] transition-all text-lg hover:border-gray-300" 
-              placeholder="+250 7XX XXX XXX" 
+              className="w-full rounded-2xl bg-white px-6 py-4 text-gray-900 border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#AD5618]/20 focus:border-[#AD5618] transition-all text-lg hover:border-gray-300"
+              placeholder="+250 7XX XXX XXX"
             />
           </div>
         </div>
@@ -502,12 +500,12 @@ function MessageForm() {
       <motion.div variants={fadeInUp} transition={{ duration: 0.5, delay: 0.3 }}>
         <div>
           <label className="block text-lg font-semibold text-gray-900 mb-3">Company/Organization</label>
-          <input 
+          <input
             name="company"
             value={formData.company}
             onChange={handleInputChange}
-            className="w-full rounded-2xl bg-white px-6 py-4 text-gray-900 border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#AD5618]/20 focus:border-[#AD5618] transition-all text-lg hover:border-gray-300" 
-            placeholder="Your company or organization (optional)" 
+            className="w-full rounded-2xl bg-white px-6 py-4 text-gray-900 border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#AD5618]/20 focus:border-[#AD5618] transition-all text-lg hover:border-gray-300"
+            placeholder="Your company or organization (optional)"
           />
         </div>
       </motion.div>
@@ -518,25 +516,25 @@ function MessageForm() {
         <div className="space-y-6">
           <div>
             <label className="block text-lg font-semibold text-gray-900 mb-3">Subject *</label>
-            <input 
+            <input
               name="subject"
               value={formData.subject}
               onChange={handleInputChange}
-              className="w-full rounded-2xl bg-white px-6 py-4 text-gray-900 border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#AD5618]/20 focus:border-[#AD5618] transition-all text-lg hover:border-gray-300" 
-              placeholder="How can we help you?" 
+              className="w-full rounded-2xl bg-white px-6 py-4 text-gray-900 border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#AD5618]/20 focus:border-[#AD5618] transition-all text-lg hover:border-gray-300"
+              placeholder="How can we help you?"
               required
             />
           </div>
-          
+
           <div>
             <label className="block text-lg font-semibold text-gray-900 mb-3">Message *</label>
-            <textarea 
+            <textarea
               name="message"
               value={formData.message}
               onChange={handleInputChange}
               rows={6}
-              className="w-full rounded-2xl bg-white px-6 py-4 text-gray-900 border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#AD5618]/20 focus:border-[#AD5618] transition-all text-lg resize-none hover:border-gray-300" 
-              placeholder="Tell us more about your inquiry. Please include any specific details that would help us assist you better..." 
+              className="w-full rounded-2xl bg-white px-6 py-4 text-gray-900 border-2 border-gray-200 focus:outline-none focus:ring-4 focus:ring-[#AD5618]/20 focus:border-[#AD5618] transition-all text-lg resize-none hover:border-gray-300"
+              placeholder="Tell us more about your inquiry. Please include any specific details that would help us assist you better..."
               required
             />
             <div className="mt-2 text-sm text-gray-500">
@@ -547,39 +545,38 @@ function MessageForm() {
       </motion.div>
 
       {/* Privacy Notice */}
-      <motion.div 
-        variants={fadeInUp} 
+      <motion.div
+        variants={fadeInUp}
         transition={{ duration: 0.5, delay: 0.5 }}
         className="bg-gray-50 rounded-2xl p-6"
       >
         <div className="flex items-start gap-3">
-          <input 
-            type="checkbox" 
+          <input
+            type="checkbox"
             id="privacy-consent"
-            className="mt-1 w-5 h-5 text-[#AD5618] border-2 border-gray-300 rounded focus:ring-[#AD5618] focus:ring-2" 
+            className="mt-1 w-5 h-5 text-[#AD5618] border-2 border-gray-300 rounded focus:ring-[#AD5618] focus:ring-2"
             required
           />
           <label htmlFor="privacy-consent" className="text-sm text-gray-600 leading-relaxed">
-            I agree to the processing of my personal data in accordance with Iby'Iwacu's Privacy Policy. 
-            I understand that my information will be used to respond to my inquiry and may be used to 
+            I agree to the processing of my personal data in accordance with Iby&apos;Iwacu&apos;s Privacy Policy.
+            I understand that my information will be used to respond to my inquiry and may be used to
             send me relevant updates about products and services.
           </label>
         </div>
       </motion.div>
-      
+
       {/* Submit Button */}
       <motion.div variants={fadeInUp} transition={{ duration: 0.5, delay: 0.6 }}>
         <motion.button
           whileHover={{ scale: status === "idle" ? 1.02 : 1 }}
           whileTap={{ scale: status === "idle" ? 0.98 : 1 }}
           type="submit"
-          className={`w-full py-5 rounded-2xl font-bold text-xl transition-all shadow-lg ${
-            status === "idle"
+          className={`w-full py-5 rounded-2xl font-bold text-xl transition-all shadow-lg ${status === "idle"
               ? "bg-[#AD5618] text-white hover:bg-[#91530A] hover:shadow-xl"
               : status === "sending"
-              ? "bg-gray-400 text-white cursor-not-allowed"
-              : "bg-green-500 text-white"
-          }`}
+                ? "bg-gray-400 text-white cursor-not-allowed"
+                : "bg-green-500 text-white"
+            }`}
           disabled={status !== "idle"}
         >
           {status === "idle" && (
@@ -608,7 +605,7 @@ function MessageForm() {
             </span>
           )}
         </motion.button>
-        
+
         {status === "sent" && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -616,7 +613,7 @@ function MessageForm() {
             className="mt-4 p-4 bg-green-50 border border-green-200 rounded-2xl"
           >
             <p className="text-green-800 text-center">
-              Thank you for your message! We'll get back to you within 24 hours.
+              Thank you for your message! We&apos;ll get back to you within 24 hours.
             </p>
           </motion.div>
         )}

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function BlogListPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -111,18 +112,18 @@ export default function BlogListPage() {
 
   const categories = ['all', 'Crafts', 'Art', 'Agriculture', 'Community', 'Textiles', 'Tourism', 'Innovation', 'Empowerment'];
 
-  const filteredPosts = selectedCategory === 'all' 
-    ? blogPosts 
+  const filteredPosts = selectedCategory === 'all'
+    ? blogPosts
     : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-orange-50">
       {/* Cart Navigation Section */}
-      <section className="bg-white border-b border-gray-200 py-4" style={{backgroundImage: `url("../imagess/imagess/African Women.jpg")`}}>
+      <section className="bg-white border-b border-gray-200 py-4" style={{ backgroundImage: `url("../imagess/imagess/African Women.jpg")` }}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
-            <Link 
-              href="/cart" 
+            <Link
+              href="/cart"
               className="flex items-center gap-2 bg-[#AD5618] hover:bg-[#91530A] text-white px-4 py-2 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,25 +140,24 @@ export default function BlogListPage() {
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-orange-100 to-transparent rounded-full opacity-30"></div>
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-amber-100 to-transparent rounded-full opacity-30"></div>
-        
+
         <div className="container relative z-10">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">Our Blog & <span className="text-[#AD5618]">Stories</span></h1>
           <p className="text-md text-gray-600 max-w-3xl mx-auto leading-relaxed mb-30">
-            Dive into the rich world of Rwandan craftsmanship through our curated collection of stories, 
+            Dive into the rich world of Rwandan craftsmanship through our curated collection of stories,
             featuring artisans, techniques, and the cultural heritage behind every piece.
           </p>
-          
+
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-3 mb-4">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-                  selectedCategory === category
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${selectedCategory === category
                     ? 'bg-[#AD5618] text-white shadow-lg'
                     : 'bg-white text-gray-700 hover:bg-gray-100 shadow-md'
-                }`}
+                  }`}
               >
                 {category === 'all' ? 'All Stories' : category}
               </button>
@@ -172,11 +172,12 @@ export default function BlogListPage() {
           {blogPosts.filter(post => post.featured).map((post) => (
             <div key={post.id} className="bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500">
               <div className="grid lg:grid-cols-2 gap-0">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                <div className="relative overflow-hidden w-full h-full min-h-[300px]">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-6 left-6">
                     <span className="inline-block px-4 py-2 rounded-full text-sm font-semibold text-white bg-[#AD5618]">
@@ -184,7 +185,7 @@ export default function BlogListPage() {
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="p-12 flex flex-col justify-center">
                   <div className="mb-6">
                     <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold text-[#AD5618] bg-orange-100 mb-4">
@@ -197,7 +198,7 @@ export default function BlogListPage() {
                       {post.excerpt}
                     </p>
                   </div>
-                  
+
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-[#AD5618] to-[#91530A] rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-lg">
@@ -209,14 +210,14 @@ export default function BlogListPage() {
                       <div className="text-sm text-gray-500">{post.role}</div>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center gap-4 text-sm text-gray-500 mb-6">
                     <span>{post.date}</span>
                     <span>•</span>
                     <span>{post.readTime}</span>
                   </div>
-                  
-                  <Link 
+
+                  <Link
                     href={`/blog/${post.id}`}
                     className="inline-flex items-center gap-2 bg-[#AD5618] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#91530A] transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300 w-fit"
                   >
@@ -238,11 +239,12 @@ export default function BlogListPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.filter(post => !post.featured).map((post) => (
               <article key={post.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group cursor-pointer">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.title} 
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" 
+                <div className="relative overflow-hidden w-full h-64">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white bg-[#AD5618]">
@@ -255,16 +257,16 @@ export default function BlogListPage() {
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#AD5618] transition-colors line-clamp-2">
                     {post.title}
                   </h3>
-                  
+
                   <p className="text-gray-600 leading-relaxed mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
-                  
+
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-gradient-to-br from-[#AD5618] to-[#91530A] rounded-full flex items-center justify-center">
@@ -296,10 +298,10 @@ export default function BlogListPage() {
             Get the latest updates on Rwandan craftsmanship, artisan stories, and cultural insights delivered to your inbox.
           </p>
           <div className="flex max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 border-2 border-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50" 
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-3 rounded-lg text-gray-900 border-2 border-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
             />
             <button className="px-6 py-3 bg-white text-[#AD5618] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
               Subscribe

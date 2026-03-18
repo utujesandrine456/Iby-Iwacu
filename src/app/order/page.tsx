@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Smartphone, CreditCard, Circle, MapPin, ClipboardList, ShoppingCart } from "lucide-react";
+import Image from "next/image";
+import { Smartphone, CreditCard, Circle, ClipboardList, ShoppingCart } from "lucide-react";
 
 interface Product {
   id: string;
@@ -86,8 +87,8 @@ export default function OrderPage() {
   const addToOrder = (product: Product) => {
     const existingItem = selectedProducts.find(item => item.productId === product.id);
     if (existingItem) {
-      setSelectedProducts(prev => prev.map(item => 
-        item.productId === product.id 
+      setSelectedProducts(prev => prev.map(item =>
+        item.productId === product.id
           ? { ...item, quantity: item.quantity + 1 }
           : item
       ));
@@ -104,7 +105,7 @@ export default function OrderPage() {
     if (quantity <= 0) {
       removeFromOrder(productId);
     } else {
-      setSelectedProducts(prev => prev.map(item => 
+      setSelectedProducts(prev => prev.map(item =>
         item.productId === productId ? { ...item, quantity } : item
       ));
     }
@@ -151,11 +152,10 @@ export default function OrderPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 py-3 px-6 rounded-lg font-medium transition-all duration-300 ${
-                activeTab === tab.id
+              className={`flex-1 py-3 px-6 rounded-lg font-medium transition-all duration-300 ${activeTab === tab.id
                   ? 'bg-[#AD5618] text-white shadow-lg transform scale-105'
                   : 'text-gray-600 hover:text-[#AD5618] hover:bg-orange-50'
-              }`}
+                }`}
             >
               <span className="mr-2">{tab.icon}</span>
               {tab.label}
@@ -176,11 +176,12 @@ export default function OrderPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   {products.map(product => (
                     <div key={product.id} className="bg-gray-50 rounded-xl p-4 hover:shadow-lg transition-all duration-300">
-                      <div className="relative mb-3">
-                        <img 
-                          src={product.image} 
+                      <div className="relative mb-3 h-32 w-full">
+                        <Image
+                          src={product.image}
                           alt={product.name}
-                          className="w-full h-32 object-cover rounded-lg"
+                          fill
+                          className="object-cover rounded-lg"
                         />
                         {!product.inStock && (
                           <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-medium">
@@ -197,11 +198,10 @@ export default function OrderPage() {
                         <button
                           onClick={() => addToOrder(product)}
                           disabled={!product.inStock}
-                          className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-                            product.inStock
+                          className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${product.inStock
                               ? 'bg-[#AD5618] hover:bg-[#91530A] text-white transform hover:scale-105'
                               : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                          }`}
+                            }`}
                         >
                           {product.inStock ? 'Add to Order' : 'Out of Stock'}
                         </button>
@@ -400,11 +400,10 @@ export default function OrderPage() {
                     <div
                       key={method.id}
                       onClick={() => setPaymentMethod(method.id)}
-                      className={`flex items-center gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all duration-300 ${
-                        paymentMethod === method.id
+                      className={`flex items-center gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all duration-300 ${paymentMethod === method.id
                           ? 'border-[#AD5618] bg-orange-50'
                           : 'border-gray-200 hover:border-[#AD5618] hover:bg-orange-50'
-                      }`}
+                        }`}
                     >
                       <input
                         type="radio"
@@ -431,11 +430,10 @@ export default function OrderPage() {
               <button
                 onClick={handleSubmit}
                 disabled={selectedProducts.length === 0}
-                className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 transform ${
-                  selectedProducts.length > 0
+                className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 transform ${selectedProducts.length > 0
                     ? 'bg-[#AD5618] hover:bg-[#91530A] text-white hover:scale-105 shadow-lg'
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                }`}
+                  }`}
               >
                 {selectedProducts.length > 0 ? 'Place Order' : 'Select Products First'}
               </button>
@@ -468,11 +466,10 @@ export default function OrderPage() {
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                      order.status === 'Delivered' ? 'bg-green-100 text-green-800' :
-                      order.status === 'In Transit' ? 'bg-blue-100 text-blue-800' :
-                      'bg-yellow-100 text-yellow-800'
-                    }`}>
+                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${order.status === 'Delivered' ? 'bg-green-100 text-green-800' :
+                        order.status === 'In Transit' ? 'bg-blue-100 text-blue-800' :
+                          'bg-yellow-100 text-yellow-800'
+                      }`}>
                       {order.status}
                     </span>
                     <button className="text-[#AD5618] hover:text-[#91530A] font-medium transition-colors">
@@ -506,7 +503,7 @@ export default function OrderPage() {
                   </button>
                 </div>
               </div>
-              
+
               {/* Sample Tracking Timeline */}
               <div className="border-l-2 border-[#AD5618] pl-6 space-y-6">
                 {[
@@ -517,9 +514,8 @@ export default function OrderPage() {
                   { status: 'Delivered', time: 'Expected: 2024-01-18', completed: false }
                 ].map((step, index) => (
                   <div key={index} className="relative">
-                    <div className={`absolute -left-8 w-4 h-4 rounded-full border-2 ${
-                      step.completed ? 'bg-[#AD5618] border-[#AD5618]' : 'bg-white border-gray-300'
-                    }`}></div>
+                    <div className={`absolute -left-8 w-4 h-4 rounded-full border-2 ${step.completed ? 'bg-[#AD5618] border-[#AD5618]' : 'bg-white border-gray-300'
+                      }`}></div>
                     <div className={`${step.completed ? 'text-gray-800' : 'text-gray-400'}`}>
                       <div className="font-medium">{step.status}</div>
                       <div className="text-sm">{step.time}</div>

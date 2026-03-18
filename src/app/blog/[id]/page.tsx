@@ -2,8 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { Calendar, Clock, User, ArrowLeft, Share2, Heart, Bookmark, Eye, MessageCircle } from "lucide-react";
+import Image from "next/image";
+import { Calendar, Clock, ArrowLeft, Share2, Heart, Bookmark, Eye, MessageCircle } from "lucide-react";
+import Link from "next/link"
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
@@ -219,11 +220,14 @@ export default function BlogDetailPage({ params }: { params: { id: string } }) {
             transition={{ duration: 0.8 }}
             className="max-w-6xl mx-auto"
           >
-            <img
-              src={blogPost.coverImage}
-              alt={blogPost.title}
-              className="w-full h-[500px] object-cover rounded-3xl shadow-2xl"
-            />
+            <div className="relative w-full h-[500px] overflow-hidden rounded-3xl shadow-2xl">
+              <Image
+                src={blogPost.coverImage}
+                alt={blogPost.title}
+                fill
+                className="object-cover"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
@@ -309,18 +313,21 @@ export default function BlogDetailPage({ params }: { params: { id: string } }) {
                 >
                   <h3 className="text-xl font-bold text-gray-900 mb-6">Related Stories</h3>
                   <div className="space-y-6">
-                    {blogPost.relatedPosts.map((post, index) => (
+                    {blogPost.relatedPosts.map((post) => (
                       <Link
                         key={post.id}
                         href={`/blog/${post.id}`}
                         className="block group"
                       >
                         <div className="flex gap-4">
-                          <img
-                            src={post.image}
-                            alt={post.title}
-                            className="w-20 h-20 object-cover rounded-xl group-hover:scale-105 transition-transform"
-                          />
+                          <div className="relative w-20 h-20 overflow-hidden rounded-xl">
+                            <Image
+                              src={post.image}
+                              alt={post.title}
+                              fill
+                              className="object-cover group-hover:scale-105 transition-transform"
+                            />
+                          </div>
                           <div className="flex-1">
                             <h4 className="font-semibold text-gray-900 group-hover:text-[#AD5618] transition-colors text-sm leading-tight mb-2">
                               {post.title}

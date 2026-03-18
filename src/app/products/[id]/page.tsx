@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Shield, Truck, RotateCcw, Users, Leaf, Handshake } from "lucide-react";
 
 const fadeInUp = {
@@ -21,6 +22,7 @@ const staggerContainer = {
 };
 
 export default function ProductDetail({ params }: { params: { id: string } }) {
+  console.log("Product ID:", params.id);
   const title = "Handcrafted Agaseke Basket";
   const price = 89.99;
   const compareAt = 120.00;
@@ -88,15 +90,20 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
               transition={{ duration: 0.6 }}
               className="relative rounded-3xl overflow-hidden border-4 border-gray-100 bg-white shadow-2xl"
             >
-              <motion.img
+              <motion.div
                 key={active}
                 initial={{ opacity: 0, scale: 1.1 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                src={images[active]}
-                alt={title}
-                className="w-full h-[500px] object-cover"
-              />
+                className="w-full h-[500px] relative"
+              >
+                <Image
+                  src={images[active]}
+                  alt={title}
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
               {hasDiscount && (
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
@@ -120,13 +127,14 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setActive(i)}
-                  className={`relative rounded-2xl overflow-hidden border-3 transition-all duration-300 ${
-                    active === i 
-                      ? "border-[#AD5618] ring-4 ring-[#AD5618]/20 shadow-lg" 
-                      : "border-gray-200 hover:border-gray-300"
-                  }`}
+                  className={`relative rounded-2xl overflow-hidden border-3 transition-all duration-300 ${active === i
+                    ? "border-[#AD5618] ring-4 ring-[#AD5618]/20 shadow-lg"
+                    : "border-gray-200 hover:border-gray-300"
+                    }`}
                 >
-                  <img src={src} alt={`View ${i + 1}`} className="w-20 h-20 object-cover" />
+                  <div className="w-20 h-20 relative">
+                    <Image src={src} alt={`View ${i + 1}`} fill className="object-cover" />
+                  </div>
                 </motion.button>
               ))}
             </motion.div>
@@ -182,11 +190,10 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setSelectedSize(size.id)}
-                    className={`px-6 py-3 rounded-full font-semibold text-md transition-all duration-300 ${
-                      selectedSize === size.id
-                        ? "bg-[#AD5618] text-white shadow-lg"
-                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                    }`}
+                    className={`px-6 py-3 rounded-full font-semibold text-md transition-all duration-300 ${selectedSize === size.id
+                      ? "bg-[#AD5618] text-white shadow-lg"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      }`}
                   >
                     {size.name} - ${size.price}
                   </motion.button>
@@ -297,23 +304,23 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Product Story</h2>
               <div className="prose prose-lg text-gray-600">
                 <p className="mb-4">
-                  The Agaseke basket is more than just a decorative piece—it's a symbol of Rwandan unity and resilience. 
-                  Traditionally woven by women in cooperatives across Rwanda, these baskets represent the coming together 
+                  The Agaseke basket is more than just a decorative piece—it&apos;s a symbol of Rwandan unity and resilience.
+                  Traditionally woven by women in cooperatives across Rwanda, these baskets represent the coming together
                   of communities to create something beautiful and functional.
                 </p>
                 <p className="mb-4">
-                  Each basket takes several days to complete, with artisans carefully selecting and preparing natural 
-                  materials like sisal and sweetgrass. The intricate geometric patterns are not just decorative—they 
+                  Each basket takes several days to complete, with artisans carefully selecting and preparing natural
+                  materials like sisal and sweetgrass. The intricate geometric patterns are not just decorative—they
                   tell stories of Rwandan culture and history.
                 </p>
                 <p>
-                  By purchasing this basket, you're not only bringing authentic African artistry into your home, 
-                  but also supporting sustainable livelihoods for Rwandan women and preserving traditional crafts 
+                  By purchasing this basket, you&apos;re not only bringing authentic African artistry into your home,
+                  but also supporting sustainable livelihoods for Rwandan women and preserving traditional crafts
                   for future generations.
                 </p>
               </div>
             </div>
-            
+
             <div className="bg-[#AD5618] text-white rounded-3xl p-8">
               <h3 className="text-2xl font-bold mb-6">Artisan Impact</h3>
               <div className="space-y-4">
