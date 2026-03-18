@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/league-spartan": "^5.2.8",
+    "framer-motion": "^12.35.2",
     "lucide-react": "^0.540.0",
     "next": "15.4.7",
     "react": "19.1.0",

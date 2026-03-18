@@ -1,3 +1,5 @@
+import { Lock } from "lucide-react";
+
 export default function CheckoutPersonalPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-orange-50 py-10">
@@ -96,7 +98,10 @@ export default function CheckoutPersonalPage() {
               <div className="flex justify-between text-gray-700"><span>Subtotal</span><span>$400</span></div>
               <div className="flex justify-between text-gray-700"><span>Shipping</span><span>$100</span></div>
               <div className="border-t border-gray-200 pt-4 flex justify-between text-lg font-semibold text-gray-900"><span>Total</span><span>$500</span></div>
-              <div className="text-xs text-gray-500 pt-2">🔒 Secure checkout • Encrypted payment</div>
+              <div className="text-xs text-gray-500 pt-2 flex items-center gap-1">
+                <Lock className="w-3 h-3" />
+                Secure checkout • Encrypted payment
+              </div>
             </div>
           </aside>
         </div>

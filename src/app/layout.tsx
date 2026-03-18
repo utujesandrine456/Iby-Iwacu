@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import LayoutChrome from "@/app/components/LayoutChrome";
+import LayoutChrome from "@/components/LayoutChrome";
 
 export const metadata: Metadata = {
   title: "Iby'Iwacu – Frames Gallery",
@@ -19,9 +19,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-      </head>
       <body className={`antialiased`}>
         <LayoutChrome>{children}</LayoutChrome>
       </body>

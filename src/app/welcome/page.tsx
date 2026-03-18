@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useAuth } from "@/app/components/AuthProvider";
+import { useAuth } from "@/components/AuthProvider";
 import { CheckCircle, ArrowRight, Sparkles, User, CreditCard, ShoppingBag } from "lucide-react";
 
 export default function WelcomePage() {

@@ -1,9 +1,9 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import SiteHeader from "@/app/components/SiteHeader";
-import SiteFooter from "@/app/components/SiteFooter";
-import AuthProvider from "@/app/components/AuthProvider";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+import AuthProvider from "@/components/AuthProvider";
 
 export default function LayoutChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();

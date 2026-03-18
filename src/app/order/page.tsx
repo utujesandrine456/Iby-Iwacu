@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Smartphone, CreditCard, Circle, MapPin, ClipboardList, ShoppingCart } from "lucide-react";
 
 interface Product {
   id: string;
@@ -330,7 +331,9 @@ export default function OrderPage() {
                 </h2>
                 {selectedProducts.length === 0 ? (
                   <div className="text-center py-8 text-gray-500">
-                    <div className="text-4xl mb-2">🛒</div>
+                    <div className="flex justify-center mb-2">
+                      <ShoppingCart className="w-12 h-12 text-gray-400" />
+                    </div>
                     <p>No products selected</p>
                     <p className="text-sm">Add products to your order</p>
                   </div>
@@ -390,9 +393,9 @@ export default function OrderPage() {
                 </h2>
                 <div className="space-y-4">
                   {[
-                    { id: 'mobile-money', label: 'Mobile Money', icon: '📱', color: 'bg-green-500', description: 'MTN Mobile Money, Airtel Money' },
-                    { id: 'card', label: 'Credit/Debit Card', icon: '💳', color: 'bg-blue-500', description: 'Visa, Mastercard, American Express' },
-                    { id: 'paypal', label: 'PayPal', icon: '🔵', color: 'bg-blue-600', description: 'Pay with your PayPal account' }
+                    { id: 'mobile-money', label: 'Mobile Money', icon: <Smartphone className="w-6 h-6" />, color: 'bg-green-500', description: 'MTN Mobile Money, Airtel Money' },
+                    { id: 'card', label: 'Credit/Debit Card', icon: <CreditCard className="w-6 h-6" />, color: 'bg-blue-500', description: 'Visa, Mastercard, American Express' },
+                    { id: 'paypal', label: 'PayPal', icon: <Circle className="w-6 h-6" />, color: 'bg-blue-600', description: 'Pay with your PayPal account' }
                   ].map(method => (
                     <div
                       key={method.id}
@@ -412,7 +415,7 @@ export default function OrderPage() {
                         onChange={(e) => setPaymentMethod(e.target.value)}
                         className="w-5 h-5 text-[#AD5618] focus:ring-[#AD5618]"
                       />
-                      <div className={`w-12 h-12 ${method.color} rounded-full flex items-center justify-center text-white text-xl`}>
+                      <div className={`w-12 h-12 ${method.color} rounded-full flex items-center justify-center text-white`}>
                         {method.icon}
                       </div>
                       <div className="flex-1">
@@ -444,7 +447,7 @@ export default function OrderPage() {
         {activeTab === 'order-history' && (
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <h2 className="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
-              <span className="text-[#AD5618]">📋</span>
+              <ClipboardList className="w-8 h-8 text-[#AD5618]" />
               Order History
             </h2>
             <div className="space-y-6">
@@ -486,7 +489,7 @@ export default function OrderPage() {
         {activeTab === 'track-order' && (
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <h2 className="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
-              <span className="text-[#AD5618]">📍</span>
+              <ClipboardList className="w-8 h-8 text-[#AD5618]" />
               Track Your Order
             </h2>
             <div className="max-w-md mx-auto">

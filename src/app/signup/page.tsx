@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { useAuth } from "@/app/components/AuthProvider";
+import { useAuth } from "@/components/AuthProvider";
 
 export default function SignupPage() {
   const { signup } = useAuth();

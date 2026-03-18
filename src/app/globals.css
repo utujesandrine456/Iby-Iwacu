@@ -1,4 +1,9 @@
 @import "tailwindcss";
+@import "@fontsource/league-spartan/400.css";
+@import "@fontsource/league-spartan/500.css";
+@import "@fontsource/league-spartan/600.css";
+@import "@fontsource/league-spartan/700.css";
+@import "@fontsource/league-spartan/800.css";
 
 :root {
   --background: #ffffff;
@@ -19,10 +24,31 @@
   }
 }
 
+/* Remove all scrollbars */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-y: scroll;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+  font-family: 'League Spartan', system-ui, -apple-system, "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 /* Helpers */
@@ -40,4 +66,9 @@ body {
 .signup-page header,
 .signup-page footer {
   display: none !important;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }
