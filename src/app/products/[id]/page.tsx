@@ -191,7 +191,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setSelectedSize(size.id)}
-                    className={`px-6 py-3 rounded-full font-semibold text-md transition-all duration-300 ${selectedSize === size.id
+                    className={`px-6 py-3 rounded-md font-semibold text-md transition-all duration-300 ${selectedSize === size.id
                       ? "bg-[#AD5618] text-white shadow-lg"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                       }`}
@@ -235,14 +235,14 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="flex-1 bg-[#AD5618] text-white px-4 py-4 rounded-full cursor-pointer font-bold text-xl hover:bg-[#91530A] transition-colors shadow-xl"
+                className="flex-1 bg-[#AD5618] text-white px-4 py-4 rounded-md cursor-pointer font-bold text-xl hover:bg-[#91530A] transition-colors shadow-xl"
               >
                 Add to Cart
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="flex-1 border-2 border-[#AD5618] text-[#AD5618] px-4 cursor-pointer py-4 rounded-full font-bold text-xl hover:bg-[#AD5618] hover:text-white transition-colors"
+                className="flex-1 border-2 border-[#AD5618] text-[#AD5618] px-4 cursor-pointer py-4 rounded-md font-bold text-xl hover:bg-[#AD5618] hover:text-white transition-colors"
               >
                 Buy Now
               </motion.button>

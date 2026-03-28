@@ -559,7 +559,7 @@ export default function Home() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 bg-[#AD5618] text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-[#91530A] transform hover:-translate-y-1 transition-all duration-300 shadow-xl"
+                className="inline-flex items-center gap-2 bg-[#AD5618] text-white px-6 py-3 rounded-md font-bold text-lg hover:bg-[#91530A] transform hover:-translate-y-1 transition-all duration-300 shadow-xl"
               >
                 View All Categories
                 <motion.svg
@@ -597,7 +597,7 @@ export default function Home() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/products"
-                className="mt-4 md:mt-0 bg-gray-900 text-white px-8 py-4 rounded-full hover:bg-[#AD5618] transition-colors duration-300 font-bold text-lg inline-block shadow-lg"
+                className="mt-4 md:mt-0 bg-[#AD5618] text-white px-6 py-3 rounded-md hover:bg-[#AD5618] transition-colors duration-300 font-bold text-lg inline-block shadow-lg"
               >
                 View All →
               </Link>
@@ -619,7 +619,7 @@ export default function Home() {
                 whileHover={{ y: -8, scale: 1.03, rotateZ: 2 }}
                 className="group bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
               >
-                <div className="relative aspect-square overflow-hidden">
+                <div className="relative aspect-square overflow-hidden cursor-pointer">
                   <Image
                     src={product.image}
                     alt={product.title}
@@ -672,7 +672,7 @@ export default function Home() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   href="/about"
-                  className="inline-flex items-center bg-white text-[#AD5618] px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
+                  className="inline-flex items-center bg-white text-[#AD5618] px-8 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
                 >
                   Read More
                   <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -847,7 +847,7 @@ export default function Home() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 bg-[#AD5618] text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-[#91530A] transform hover:-translate-y-1 transition-all duration-300 shadow-xl"
+                className="inline-flex items-center gap-2 bg-[#AD5618] text-white px-6 py-3 rounded-md font-bold text-lg hover:bg-[#91530A] transform hover:-translate-y-1 transition-all duration-300 shadow-xl"
               >
                 Explore All Stories
                 <motion.svg
@@ -885,12 +885,12 @@ export default function Home() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-4 rounded-full text-gray-900 text-lg focus:outline-none focus:ring-4 focus:ring-white/50"
+                className="flex-1 px-6 py-2 rounded-md text-white text-lg focus:outline-none focus:ring-1 focus:ring-white/50 border-2 border-white/50"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 bg-white text-[#AD5618] rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
+                className="px-10 py-2 bg-white text-[#AD5618] cursor-pointer rounded-md font-medium text-lg hover:bg-gray-100 transition-colors shadow-lg"
               >
                 Subscribe
               </motion.button>

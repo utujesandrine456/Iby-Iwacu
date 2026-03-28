@@ -311,9 +311,9 @@ export default function ProductsPage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`px-6 py-3 rounded-full font-semibold text-base transition-all duration-300 ${selectedCategory === category.id
-                      ? "bg-[#AD5618] text-white shadow-lg"
-                      : "bg-white text-gray-700 hover:bg-gray-100 border-2 border-gray-200"
+                  className={`px-6 py-3 rounded-md font-semibold text-base transition-all duration-300 ${selectedCategory === category.id
+                    ? "bg-[#AD5618] text-white shadow-lg"
+                    : "bg-white text-gray-700 hover:bg-gray-100 border-2 border-gray-200"
                     }`}
                 >
                   {category.name} ({category.count})
@@ -437,7 +437,7 @@ export default function ProductsPage() {
                     >
                       <Link
                         href={`/products/${product.id}`}
-                        className="block w-full bg-[#AD5618] text-white py-3 rounded-full font-bold text-lg hover:bg-[#91530A] transition-colors shadow-lg text-center"
+                        className="block w-full bg-[#AD5618] text-white py-3 rounded-md font-bold text-lg hover:bg-[#91530A] transition-colors shadow-lg text-center"
                       >
                         View Details
                       </Link>
@@ -468,7 +468,7 @@ export default function ProductsPage() {
                   setSearchQuery("");
                   setSelectedCategory("all");
                 }}
-                className="bg-[#AD5618] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#91530A] transition-colors"
+                className="bg-[#AD5618] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#91530A] transition-colors"
               >
                 Clear Filters
               </button>
