@@ -535,7 +535,7 @@ export default function AboutPage() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   href="/products"
-                  className="inline-block bg-[#AD5618] text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-[#91530A] transition-colors shadow-xl"
+                  className="inline-block bg-[#AD5618] text-white px-6 py-4 rounded-md font-semibold text-lg hover:bg-[#91530A] transition-colors shadow-xl"
                 >
                   Shop Our Collection
                 </Link>
@@ -543,7 +543,7 @@ export default function AboutPage() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   href="/contact"
-                  className="inline-block border-2 border-[#AD5618] text-[#AD5618] px-10 py-5 rounded-full font-bold text-xl hover:bg-[#AD5618] hover:text-white transition-colors"
+                  className="inline-block border-2 border-[#AD5618] text-[#AD5618] px-6 py-4 rounded-md font-semibold text-lg hover:bg-[#AD5618] hover:text-white transition-colors"
                 >
                   Partner With Us
                 </Link>

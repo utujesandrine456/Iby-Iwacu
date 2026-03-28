@@ -9,6 +9,7 @@ export default function LayoutChrome({ children }: { children: React.ReactNode }
   const pathname = usePathname();
   const isAuthPage = pathname === "/login" || pathname === "/signup";
 
+
   if (isAuthPage) {
     return (
       <AuthProvider>
@@ -20,7 +21,7 @@ export default function LayoutChrome({ children }: { children: React.ReactNode }
   return (
     <AuthProvider>
       <SiteHeader />
-      <main>{children}</main>
+      <main className="pt-14">{children}</main>
       <SiteFooter />
     </AuthProvider>
   );

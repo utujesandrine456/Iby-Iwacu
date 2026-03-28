@@ -33,7 +33,7 @@ export default function SiteHeader() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`border-b border-black/5 bg-white/95 backdrop-blur-md sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-lg py-2' : 'py-3'
+      className={`border-b border-black/5 bg-white/95 backdrop-blur-md fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-lg py-2' : 'py-3'
         }`}
     >
       <div className="container flex h-14 items-center justify-between gap-4">
