@@ -55,7 +55,7 @@ export default function CartPage() {
                     >
                       ✕
                     </button>
-                    
+
                     {/* Product Image */}
                     <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                       <Image
@@ -66,19 +66,19 @@ export default function CartPage() {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    
+
                     {/* Product Name */}
                     <div className="flex-1">
                       <h3 className="font-medium text-gray-900">{item.title}</h3>
                     </div>
-                    
+
                     {/* Price */}
                     <div className="text-gray-900 font-medium">
                       ${item.price.toFixed(2)}
                     </div>
-                    
+
                     {/* Quantity Selector */}
-                    <div className="flex items-center gap-2 border border-gray-300 rounded-lg px-3 py-1">
+                    <div className="flex items-center gap-2 border border-gray-300 rounded-md px-3 py-1">
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
                         className="text-gray-600 hover:text-gray-900"
@@ -95,13 +95,13 @@ export default function CartPage() {
                         +
                       </button>
                     </div>
-                    
+
                     {/* Total */}
                     <div className="text-gray-900 font-medium">
                       ${(item.price * item.quantity).toFixed(2)}
                     </div>
                   </div>
-                  
+
                   {/* Separator */}
                   {index < cartItems.length - 1 && (
                     <div className="border-t border-gray-200"></div>
@@ -131,10 +131,10 @@ export default function CartPage() {
                   <span>${total.toFixed(2)}</span>
                 </div>
               </div>
-              
+
               <a
                 href="/checkout/personal"
-                className="block w-full bg-[#AD5618] hover:bg-[#91530A] text-white font-semibold py-4 px-6 rounded-xl text-center transition-colors duration-300 mt-6"
+                className="block w-full bg-[#AD5618] hover:bg-[#91530A] text-white font-semibold py-4 px-6 rounded-md text-center transition-colors duration-300 mt-6"
               >
                 Proceed To Checkout
               </a>
@@ -147,7 +147,7 @@ export default function CartPage() {
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
             You May Also Like
           </h2>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {recommendedProducts.map((product) => (
               <div key={product.id} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -159,18 +159,18 @@ export default function CartPage() {
                     height={300}
                     className="w-full h-48 object-cover"
                   />
-                  
+
                   {/* Discount Tag */}
                   <div className="absolute top-3 left-3 bg-black text-white text-xs font-bold px-2 py-1 rounded">
                     -{product.discount}%
                   </div>
-                  
+
                   {/* Add to Cart Button */}
-                  <button className="absolute top-3 right-3 w-8 h-8 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
+                  <button className="absolute top-3 right-3 w-8 h-8 bg-black text-white rounded-md flex items-center justify-center hover:bg-gray-800 transition-colors">
                     +
                   </button>
                 </div>
-                
+
                 <div className="p-4">
                   <h3 className="font-medium text-gray-900 mb-2">{product.name}</h3>
                   <div className="flex items-center gap-2">

@@ -42,25 +42,25 @@ export default function CheckoutBillingPage() {
             <form className="grid gap-5">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Name On Card *</label>
-                <input className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="Full name" />
+                <input className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="Full name" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Card Number *</label>
-                <input className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="1234 5678 9012 3456" />
+                <input className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="1234 5678 9012 3456" />
               </div>
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Valid Through *</label>
-                  <input className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="MM/YY" />
+                  <input className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="MM/YY" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">CVV *</label>
-                  <input className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="123" />
+                  <input className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="123" />
                 </div>
               </div>
               <label className="flex items-center gap-2 text-sm text-gray-700"><input type="checkbox" className="accent-[#AD5618]" /> Save as default payment method</label>
 
-              <a href="/checkout/confirmation" className="mt-2 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#AD5618] to-[#91530A] px-6 py-3 text-white font-semibold shadow-lg hover:from-[#91530A] hover:to-[#7A4A09] transition-colors">
+              <a href="/checkout/confirmation" className="mt-2 inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#AD5618] to-[#91530A] px-6 py-3 text-white font-semibold shadow-lg hover:from-[#91530A] hover:to-[#7A4A09] transition-colors">
                 Review & Confirm
               </a>
             </form>

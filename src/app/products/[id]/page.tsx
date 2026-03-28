@@ -109,7 +109,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="absolute top-6 left-6 px-4 py-2 rounded-full bg-[#eb8034] text-white text-lg font-bold shadow-lg"
+                  className="absolute top-6 left-6 px-4 py-2 rounded-md bg-[#eb8034] text-white text-lg font-bold shadow-lg"
                 >
                   -{discount}%
                 </motion.div>
@@ -205,7 +205,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
             {/* Quantity */}
             <motion.div variants={fadeInUp} transition={{ duration: 0.6, delay: 0.3 }}>
               <h3 className="text-xl font-bold text-black mb-4">Quantity</h3>
-              <div className="inline-flex items-center rounded-2xl border-2 border-black bg-white overflow-hidden">
+              <div className="inline-flex items-center rounded-md border-2 border-black bg-white overflow-hidden">
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -260,7 +260,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                     transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                     className="flex items-center gap-3"
                   >
-                    <div className="w-2 h-2 bg-[#AD5618] rounded-full"></div>
+                    <div className="w-2 h-2 bg-[#AD5618] rounded-md"></div>
                     <span className="text-gray-700">{feature}</span>
                   </motion.div>
                 ))}
@@ -278,7 +278,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                 { icon: <Truck className="w-6 h-6" />, title: "Free Shipping", desc: "Orders over $50" },
                 { icon: <RotateCcw className="w-6 h-6" />, title: "Easy Returns", desc: "30-day policy" }
               ].map((badge, index) => (
-                <div key={index} className="text-center p-4 bg-gray-50 rounded-2xl">
+                <div key={index} className="text-center p-4 bg-gray-50 rounded-md">
                   <div className="flex justify-center mb-2 text-[#AD5618]">{badge.icon}</div>
                   <div className="font-semibold text-gray-900 text-sm">{badge.title}</div>
                   <div className="text-xs text-gray-600">{badge.desc}</div>
@@ -326,7 +326,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
               <h3 className="text-2xl font-bold mb-6">Artisan Impact</h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-white/20 rounded-md flex items-center justify-center">
                     <Users className="w-6 h-6" />
                   </div>
                   <div>
@@ -335,7 +335,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-white/20 rounded-md flex items-center justify-center">
                     <Leaf className="w-6 h-6" />
                   </div>
                   <div>
@@ -344,7 +344,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-white/20 rounded-md flex items-center justify-center">
                     <Handshake className="w-6 h-6" />
                   </div>
                   <div>

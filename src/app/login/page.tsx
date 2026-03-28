@@ -142,7 +142,7 @@ export default function LoginPage() {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="artisan@ibyiwacu.com"
-                    className="w-full bg-white border border-gray-100 rounded-2xl py-4 pl-12 pr-4 text-gray-900 text-sm focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#AD5618]/5 focus:border-[#AD5618] transition-all"
+                    className="w-full bg-white border border-gray-100 rounded-md py-4 pl-12 pr-4 text-gray-900 text-sm focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#AD5618]/5 focus:border-[#AD5618] transition-all"
                   />
                 </div>
               </div>
@@ -161,7 +161,7 @@ export default function LoginPage() {
                     value={formData.password}
                     onChange={handleInputChange}
                     placeholder="••••••••"
-                    className="w-full bg-white border border-gray-100 rounded-2xl py-4 pl-12 pr-12 text-gray-900 text-sm focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#AD5618]/5 focus:border-[#AD5618] transition-all"
+                    className="w-full bg-white border border-gray-100 rounded-md py-4 pl-12 pr-12 text-gray-900 text-sm focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#AD5618]/5 focus:border-[#AD5618] transition-all"
                   />
                   <button
                     type="button"

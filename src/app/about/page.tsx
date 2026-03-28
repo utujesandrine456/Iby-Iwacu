@@ -25,7 +25,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-[100vh] flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <Image
@@ -128,7 +128,7 @@ export default function AboutPage() {
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
                     href="/products"
-                    className="group relative px-10 py-4 bg-[#AD5618] text-white rounded-2xl font-bold text-lg overflow-hidden transition-all duration-300 shadow-2xl hover:bg-[#91530A] inline-flex items-center gap-3"
+                    className="group relative px-8 py-4 bg-[#AD5618] text-white rounded-md font-bold text-lg overflow-hidden transition-all duration-300 shadow-2xl hover:bg-[#91530A] inline-flex items-center gap-3"
                   >
                     Explore Our Products
                     <motion.svg
@@ -146,7 +146,7 @@ export default function AboutPage() {
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
                     href="/contact"
-                    className="px-10 py-4 border-2 border-white text-white rounded-2xl font-bold text-lg hover:bg-white hover:text-[#AD5618] transition-all duration-300 inline-block shadow-2xl"
+                    className="px-8 py-3.5 border-2 border-white text-white rounded-md font-bold text-lg hover:bg-white hover:text-[#AD5618] transition-all duration-300 inline-block shadow-2xl"
                   >
                     Partner With Us
                   </Link>

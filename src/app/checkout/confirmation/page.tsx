@@ -37,11 +37,11 @@ export default function CheckoutConfirmationPage() {
           <p className="text-gray-600 mb-6">Your order has been confirmed and is on the way. You can track your order status below.</p>
 
           <div className="grid gap-4 sm:grid-cols-2 max-w-2xl mx-auto">
-            <input className="rounded-xl border border-gray-300 px-4 py-3" placeholder="Order ID" defaultValue="UWE13ESDS" />
-            <input className="rounded-xl border border-gray-300 px-4 py-3" placeholder="Billing Email" defaultValue="max.luca@gmail.com" />
+            <input className="rounded-md border border-gray-300 px-4 py-3" placeholder="Order ID" defaultValue="UWE13ESDS" />
+            <input className="rounded-md border border-gray-300 px-4 py-3" placeholder="Billing Email" defaultValue="max.luca@gmail.com" />
           </div>
           <div className="mt-6">
-            <button className="rounded-xl bg-gradient-to-r from-[#AD5618] to-[#91530A] px-6 py-3 text-white font-semibold shadow-lg hover:from-[#91530A] hover:to-[#7A4A09] transition-colors">Track Your Order</button>
+            <button className="rounded-md bg-gradient-to-r from-[#AD5618] to-[#91530A] px-6 py-3 text-white font-semibold shadow-lg hover:from-[#91530A] hover:to-[#7A4A09] transition-colors">Track Your Order</button>
           </div>
         </div>
       </div>

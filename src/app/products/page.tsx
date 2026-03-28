@@ -106,7 +106,7 @@ export default function ProductsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Search */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <Image
@@ -219,7 +219,7 @@ export default function ProductsPage() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-[#AD5618] text-white p-3 cursor-pointer rounded-full hover:bg-[#91530A] transition-colors shadow-lg"
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-[#AD5618] text-white p-3 cursor-pointer rounded-md hover:bg-[#91530A] transition-colors shadow-lg"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />

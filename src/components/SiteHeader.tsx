@@ -25,7 +25,7 @@ export default function SiteHeader() {
   };
 
   const getLanguageText = () => {
-    return language === 'en' ? 'English' : 'Kinyarwanda';
+    return language === 'en' ? 'Eng' : 'Kiny';
   };
 
   return (
@@ -125,8 +125,8 @@ export default function SiteHeader() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={toggleLanguage}
-            className="h-9 rounded-lg border-2 border-[#AD5618] px-4 font-semibold text-[14px] bg-white text-[#AD5618] hover:bg-[#AD5618] hover:text-white transition-colors duration-300 inline-flex items-center gap-2"
-            title={`Switch to ${language === 'en' ? 'Kinyarwanda' : 'English'}`}
+            className="h-8 rounded-md border-[1.5px] border-[#AD5618] px-4 font-medium text-[14px] bg-white text-[#AD5618] hover:bg-[#AD5618] hover:text-white transition-colors duration-300 inline-flex items-center gap-2"
+            title={`Switch to ${language === 'en' ? 'Kiny' : 'Eng'}`}
           >
             <span>{getLanguageText()}</span>
           </motion.button>

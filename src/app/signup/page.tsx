@@ -127,7 +127,7 @@ export default function SignupPage() {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="p-4 bg-red-50 border border-red-100 rounded-2xl text-red-600 text-xs font-semibold flex items-center gap-3"
+                  className="p-4 bg-red-50 border border-red-100 rounded-md text-red-600 text-xs font-semibold flex items-center gap-3"
                 >
                   <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse shrink-0" />
                   {error}
@@ -147,7 +147,7 @@ export default function SignupPage() {
                     value={formData.fullName}
                     onChange={handleInputChange}
                     placeholder="John Doe"
-                    className="w-full bg-white border border-gray-100 rounded-2xl py-4 pl-12 pr-4 text-gray-900 text-sm focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#AD5618]/5 focus:border-[#AD5618] transition-all"
+                    className="w-full bg-white border border-gray-100 rounded-md py-4 pl-12 pr-4 text-gray-900 text-sm focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#AD5618]/5 focus:border-[#AD5618] transition-all"
                   />
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default function SignupPage() {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="you@ibyiwacu.com"
-                    className="w-full bg-white border border-gray-100 rounded-2xl py-4 pl-12 pr-4 text-gray-900 text-sm focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#AD5618]/5 focus:border-[#AD5618] transition-all"
+                    className="w-full bg-white border border-gray-100 rounded-md py-4 pl-12 pr-4 text-gray-900 text-sm focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#AD5618]/5 focus:border-[#AD5618] transition-all"
                   />
                 </div>
               </div>
@@ -179,7 +179,7 @@ export default function SignupPage() {
                     value={formData.password}
                     onChange={handleInputChange}
                     placeholder="••••••••"
-                    className="w-full bg-white border border-gray-100 rounded-2xl py-4 pl-12 pr-12 text-gray-900 text-sm focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#AD5618]/5 focus:border-[#AD5618] transition-all"
+                    className="w-full bg-white border border-gray-100 rounded-md py-4 pl-12 pr-12 text-gray-900 text-sm focus:bg-white focus:outline-none focus:ring-4 focus:ring-[#AD5618]/5 focus:border-[#AD5618] transition-all"
                   />
                   <button
                     type="button"

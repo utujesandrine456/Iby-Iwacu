@@ -43,47 +43,47 @@ export default function CheckoutPersonalPage() {
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
-                  <input className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="First Name" />
+                  <input className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="First Name" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
-                  <input className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="Last Name" />
+                  <input className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="Last Name" />
                 </div>
               </div>
 
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                  <input className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="you@example.com" />
+                  <input className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="you@example.com" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                  <input className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="(+250) 7XX XXX XXX" />
+                  <input className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="(+250) 7XX XXX XXX" />
                 </div>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Street Address *</label>
-                <input className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="House number and street name" />
+                <input className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="House number and street name" />
               </div>
 
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Town / City *</label>
-                  <input className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="Kigali" />
+                  <input className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="Kigali" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Country *</label>
-                  <input className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="Rwanda" />
+                  <input className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="Rwanda" />
                 </div>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Postcode / Zip *</label>
-                <input className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="00000" />
+                <input className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#AD5618] focus:border-transparent" placeholder="00000" />
               </div>
 
-              <a href="/checkout/billing" className="mt-2 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#AD5618] to-[#91530A] px-6 py-3 text-white font-semibold shadow-lg hover:from-[#91530A] hover:to-[#7A4A09] transition-colors">
+              <a href="/checkout/billing" className="mt-2 inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#AD5618] to-[#91530A] px-6 py-3 text-white font-semibold shadow-lg hover:from-[#91530A] hover:to-[#7A4A09] transition-colors">
                 Proceed to Billing
               </a>
             </form>

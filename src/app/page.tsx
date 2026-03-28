@@ -79,7 +79,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Modern Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-20">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <Image
@@ -143,7 +143,7 @@ export default function Home() {
           />
         ))}
 
-        <div className="container relative z-10">
+        <div className="container relative z-10 h-screen">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left Content */}
@@ -182,7 +182,7 @@ export default function Home() {
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link
                       href="/products"
-                      className="group relative px-10 py-4 bg-[#AD5618] text-white rounded-2xl font-bold text-lg overflow-hidden transition-all duration-300 shadow-2xl hover:bg-[#91530A] inline-flex items-center gap-3"
+                      className="group relative px-10 py-4 bg-[#AD5618] text-white rounded-md font-bold text-lg overflow-hidden transition-all duration-300 shadow-2xl hover:bg-[#91530A] inline-flex items-center gap-3"
                     >
                       Shop Now
                       <motion.svg
@@ -200,7 +200,7 @@ export default function Home() {
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link
                       href="/about"
-                      className="px-10 py-4 border-2 border-white text-white rounded-2xl font-bold text-lg hover:bg-white hover:text-[#AD5618] transition-all duration-300 inline-block shadow-2xl"
+                      className="px-10 py-4 border-2 border-white text-white rounded-lg font-bold text-md hover:bg-white hover:text-[#AD5618] transition-all duration-300 inline-block shadow-2xl"
                     >
                       Learn More
                     </Link>

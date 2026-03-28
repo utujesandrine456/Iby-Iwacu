@@ -119,7 +119,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
               transition={{ duration: 0.5, delay: 0.1 }}
               className="flex flex-wrap items-center gap-4 mb-6"
             >
-              <span className="inline-block px-4 py-2 rounded-full text-sm font-semibold text-white bg-[#AD5618]">
+              <span className="inline-block px-4 py-2 rounded-md text-sm font-semibold text-white bg-[#AD5618]">
                 {blogPost.category}
               </span>
               <div className="flex items-center gap-4 text-gray-600">
@@ -163,7 +163,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
               className="flex items-center justify-between"
             >
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#AD5618] to-[#91530A] rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#AD5618] to-[#91530A] rounded-md flex items-center justify-center">
                   <span className="text-white font-bold text-xl">
                     {blogPost.author.name.split(' ').map(n => n[0]).join('')}
                   </span>
@@ -179,7 +179,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition-all text-gray-700 hover:text-[#AD5618]"
+                  className="flex items-center gap-2 px-4 py-2 bg-white rounded-md shadow-md hover:shadow-lg transition-all text-gray-700 hover:text-[#AD5618]"
                 >
                   <Heart className="w-5 h-5" />
                   <span className="text-sm font-semibold">{blogPost.likes}</span>
@@ -187,7 +187,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition-all text-gray-700 hover:text-[#AD5618]"
+                  className="flex items-center gap-2 px-4 py-2 bg-white rounded-md shadow-md hover:shadow-lg transition-all text-gray-700 hover:text-[#AD5618]"
                 >
                   <MessageCircle className="w-5 h-5" />
                   <span className="text-sm font-semibold">{blogPost.comments}</span>
@@ -195,14 +195,14 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-all text-gray-700 hover:text-[#AD5618]"
+                  className="p-2 bg-white rounded-md shadow-md hover:shadow-lg transition-all text-gray-700 hover:text-[#AD5618]"
                 >
                   <Share2 className="w-5 h-5" />
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-all text-gray-700 hover:text-[#AD5618]"
+                  className="p-2 bg-white rounded-md shadow-md hover:shadow-lg transition-all text-gray-700 hover:text-[#AD5618]"
                 >
                   <Bookmark className="w-5 h-5" />
                 </motion.button>
@@ -268,7 +268,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                     {blogPost.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-[#AD5618] hover:text-white transition-colors cursor-pointer"
+                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm hover:bg-[#AD5618] hover:text-white transition-colors cursor-pointer"
                       >
                         #{tag}
                       </span>
@@ -293,7 +293,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                 >
                   <h3 className="text-xl font-bold text-gray-900 mb-4">About the Author</h3>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#AD5618] to-[#91530A] rounded-full flex items-center justify-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#AD5618] to-[#91530A] rounded-md flex items-center justify-center">
                       <span className="text-white font-bold text-xl">
                         {blogPost.author.name.split(' ').map(n => n[0]).join('')}
                       </span>
@@ -321,7 +321,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                         className="block group"
                       >
                         <div className="flex gap-4">
-                          <div className="relative w-20 h-20 overflow-hidden rounded-xl">
+                          <div className="relative w-20 h-20 overflow-hidden rounded-md">
                             <Image
                               src={post.image}
                               alt={post.title}
@@ -368,12 +368,12 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-4 rounded-full text-gray-900 border-2 border-white/20 bg-white/10 backdrop-blur-sm placeholder-white/70 focus:outline-none focus:ring-4 focus:ring-white/30 focus:bg-white/20 transition-all text-lg"
+                className="flex-1 px-6 py-4 rounded-md text-gray-900 border-2 border-white/20 bg-white/10 backdrop-blur-sm placeholder-white/70 focus:outline-none focus:ring-4 focus:ring-white/30 focus:bg-white/20 transition-all text-lg"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-[#AD5618] font-bold rounded-full hover:bg-gray-100 transition-colors shadow-lg text-lg"
+                className="px-8 py-4 bg-white text-[#AD5618] font-bold rounded-md hover:bg-gray-100 transition-colors shadow-lg text-lg"
               >
                 Subscribe
               </motion.button>
