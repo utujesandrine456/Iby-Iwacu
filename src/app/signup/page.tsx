@@ -46,7 +46,6 @@ export default function SignupPage() {
   return (
     <div className="h-screen w-screen overflow-hidden bg-[#fafafa] flex flex-col lg:flex-row-reverse relative">
 
-      {/* ── Right Side: Modern Image Panel (60%) ─────────────────── */}
       <div className="hidden lg:flex w-3/5 h-full relative p-8">
         <motion.div
           initial={{ opacity: 0, x: 30 }}
@@ -63,10 +62,8 @@ export default function SignupPage() {
             priority
           />
 
-          {/* Artistic darker overlay for typography contrast */}
           <div className="absolute inset-0 bg-gradient-to-tl from-black/80 via-black/20 to-transparent" />
 
-          {/* Floating artistic elements */}
           <div className="absolute top-12 right-12">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
