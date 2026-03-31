@@ -54,37 +54,10 @@ export default function SiteHeader() {
             {language === 'en' ? 'Home' : 'Ahabanza'}
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#AD5618] group-hover:w-full transition-all duration-300" />
           </Link>
-          <div className="relative">
-            <button onClick={() => setOpen((v) => !v)} className="flex items-center gap-1 hover:text-[#AD5618] transition-colors">
-              <span>{language === 'en' ? 'Categories' : 'Ibice'}</span>
-              <motion.span
-                animate={{ rotate: open ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
-                className="text-xs"
-              >
-                ▾
-              </motion.span>
-            </button>
-            <AnimatePresence>
-              {open && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute mt-2 w-44 rounded-lg border border-black/10 bg-white shadow-xl"
-                >
-                  <ul className="p-1 text-sm">
-                    <li>
-                      <Link className="block rounded px-3 py-2 hover:bg-[#AD5618]/10 hover:text-[#AD5618] transition-colors" href="/products">
-                        {language === 'en' ? 'All Products' : 'Ibicuruzwa Byose'}
-                      </Link>
-                    </li>
-                  </ul>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+          <Link href="/products" className="relative group hover:text-[#AD5618] transition-colors">
+            {language === 'en' ? 'Products' : 'Ibicuruzwa'}
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#AD5618] group-hover:w-full transition-all duration-300" />
+          </Link>
           <Link href="/about" className="relative group hover:text-[#AD5618] transition-colors">
             {language === 'en' ? 'About' : 'Turi Nande'}
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#AD5618] group-hover:w-full transition-all duration-300" />
@@ -107,30 +80,16 @@ export default function SiteHeader() {
           {/* Auth area */}
           {user ? (
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-[#AD5618] text-white flex items-center justify-center text-sm font-semibold">
-                {(user.fullName || user.email).slice(0, 1).toUpperCase()}
-              </div>
-              <button onClick={logout} className="text-sm text-[#AD5618] hover:text-[#91530A] font-semibold">Logout</button>
+              <button onClick={logout} className="text-md border-2 py-2 px-6 rounded-md border-[#AD5618] text-[#AD5618] cursor-pointer hover:text-[#91530A] font-semibold">Logout</button>
             </div>
           ) : (
             <div className="flex items-center gap-2">
-              <Link href="/login" className="text-sm text-[#AD5618] hover:text-[#91530A] font-semibold">Login</Link>
+              <Link href="/login" className="text-md border-2 py-2 px-6 rounded-md border-[#AD5618] text-[#AD5618] cursor-pointer hover:text-[#91530A] font-semibold">Login</Link>
               <span className="text-gray-300">|</span>
-              <Link href="/signup" className="text-sm text-[#AD5618] hover:text-[#91530A] font-semibold">Sign Up</Link>
+              <Link href="/signup" className="text-md border-2 py-2 px-6 rounded-md border-[#AD5618] text-[#AD5618] cursor-pointer hover:text-[#91530A] font-semibold">Sign Up</Link>
             </div>
-          )}
-
-          {/* Language Toggle */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={toggleLanguage}
-            className="h-8 rounded-md border-[1.5px] border-[#AD5618] px-4 font-medium text-[14px] bg-white text-[#AD5618] hover:bg-[#AD5618] hover:text-white transition-colors duration-300 inline-flex items-center gap-2"
-            title={`Switch to ${language === 'en' ? 'Kiny' : 'Eng'}`}
-          >
-            <span>{getLanguageText()}</span>
-          </motion.button>
-        </div>
+          )}  
+        </div>      
       </div>
     </motion.header>
   );

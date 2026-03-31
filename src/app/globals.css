@@ -76,6 +76,24 @@ html {
   scroll-behavior: smooth;
 }
 
+
+/* Global Input Styles */
+input::placeholder,
+textarea::placeholder {
+  color: #6b7280;
+  /* text-gray-500 */
+  opacity: 1;
+}
+
+input,
+textarea,
+select {
+  font-weight: 400 !important;
+  /* font-normal */
+  color: rgba(0, 0, 0, 0.8) !important;
+  /* text-black/80 */
+}
+
 /* Fix for autofill background color */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

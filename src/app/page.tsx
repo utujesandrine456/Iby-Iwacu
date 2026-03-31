@@ -80,7 +80,6 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* Modern Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-20">
-        {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <Image
             src="/Rwandan basket wall in Meg Biram's living room_.png"
@@ -371,7 +370,7 @@ export default function Home() {
             <h2 className="text-5xl font-extrabold text-gray-900 mb-4">
               Featured <span className="text-[#AD5618]">Products</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Explore our handpicked, locally sourced Rwandan products. Each piece tells a story of tradition and craftsmanship.
             </p>
           </motion.div>
@@ -400,7 +399,7 @@ export default function Home() {
                   />
                 </div>
                 <motion.div
-                  className="absolute top-3 left-3 bg-[#eb8034] text-white text-sm px-4 py-2 rounded-full font-bold"
+                  className="absolute top-3 left-3 bg-[#eb8034] text-white text-xs px-4 py-2 rounded-md font-bold"
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
@@ -507,7 +506,7 @@ export default function Home() {
                     animate={{ y: [0, -5, 0] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    <span className={`inline-block px-4 py-2 rounded-full text-sm font-bold text-white ${index === 0 ? 'bg-[#eb8034]' : index === 1 ? 'bg-[#7c3aed]' : 'bg-[#059669]'
+                    <span className={`inline-block px-4 py-2 rounded-md text-sm font-bold text-white ${index === 0 ? 'bg-[#eb8034]' : index === 1 ? 'bg-[#7c3aed]' : 'bg-[#059669]'
                       }`}>
                       {category.itemCount}
                     </span>
@@ -518,12 +517,9 @@ export default function Home() {
 
                 <div className="p-6">
                   <div className="mb-3">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#AD5618] transition-colors">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2 transition-colors">
                       {category.title}
                     </h3>
-                    <p className="text-sm font-medium text-[#AD5618] uppercase tracking-wide">
-                      {category.subtitle}
-                    </p>
                   </div>
 
                   <p className="text-gray-600 leading-relaxed mb-4">
@@ -559,7 +555,7 @@ export default function Home() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 bg-[#AD5618] text-white px-6 py-3 rounded-md font-bold text-lg hover:bg-[#91530A] transform hover:-translate-y-1 transition-all duration-300 shadow-xl"
+                className="inline-flex items-center gap-2 bg-[#AD5618] text-white px-6 py-3 rounded-md font-semibold text-lg hover:bg-[#91530A] transform hover:-translate-y-1 transition-all duration-300 shadow-xl"
               >
                 View All Categories
                 <motion.svg
@@ -597,7 +593,7 @@ export default function Home() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/products"
-                className="mt-4 md:mt-0 bg-[#AD5618] text-white px-6 py-3 rounded-md hover:bg-[#AD5618] transition-colors duration-300 font-bold text-lg inline-block shadow-lg"
+                className="mt-4 md:mt-0 bg-[#AD5618] text-white px-6 py-3 rounded-md hover:bg-[#AD5618] transition-colors duration-300 font-semibold text-md inline-block shadow-lg"
               >
                 View All →
               </Link>
@@ -666,13 +662,13 @@ export default function Home() {
               <h3 className="text-5xl font-extrabold mb-8">
                 Our Unique Selling Propositions
               </h3>
-              <p className="text-xl opacity-90 mb-10 leading-relaxed">
+              <p className="text-lg opacity-90 mb-10 leading-relaxed">
                 We take pride in offering high-quality, locally sourced Rwandan products. Every item is thoughtfully designed and responsibly sourced to bring warmth and character into your home while preserving cultural heritage.
               </p>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   href="/about"
-                  className="inline-flex items-center bg-white text-[#AD5618] px-8 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
+                  className="inline-flex items-center bg-white text-[#AD5618] px-6 py-3 rounded-md font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg"
                 >
                   Read More
                   <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -795,19 +791,19 @@ export default function Home() {
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="inline-block px-4 py-2 rounded-full text-sm font-bold text-white bg-[#AD5618]">
+                    <span className="inline-block px-4 py-2 rounded-md text-sm font-bold text-white bg-[#AD5618]">
                       {post.category}
                     </span>
                   </div>
                   <div className="absolute top-4 right-4">
-                    <span className="inline-block px-3 py-1 rounded-full text-sm font-semibold text-gray-700 bg-white">
+                    <span className="inline-block px-3 py-1 rounded-md text-sm font-semibold text-gray-700 bg-white">
                       {post.readTime}
                     </span>
                   </div>
                 </div>
 
                 <div className="p-6">
-                  <h4 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#AD5618] transition-colors line-clamp-2">
+                  <h4 className="text-2xl font-bold text-gray-900 mb-4 transition-colors line-clamp-2">
                     {post.title}
                   </h4>
 
@@ -817,11 +813,6 @@ export default function Home() {
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-[#AD5618] rounded-full flex items-center justify-center">
-                        <span className="text-white font-bold text-base">
-                          {post.author.split(' ').map(n => n[0]).join('')}
-                        </span>
-                      </div>
                       <div>
                         <div className="font-bold text-gray-900 text-base">{post.author}</div>
                         <div className="text-sm text-gray-500">{post.role}</div>
@@ -867,7 +858,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 bg-[#91530A]">
+      <section className="py-20 bg-[#AD5618]">
         <div className="container">
           <motion.div
             initial="hidden"

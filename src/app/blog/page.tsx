@@ -145,7 +145,7 @@ export default function BlogListPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-white"
           >
-            <h1 className="text-6xl md:text-8xl font-black mb-6 uppercase tracking-tighter drop-shadow-2xl">
+            <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight drop-shadow-2xl">
               Our <span className="text-[#eb8034]">Stories</span>
             </h1>
             <div className="w-24 h-1.5 bg-[#eb8034] mx-auto mb-8 rounded-md shadow-lg" />
@@ -163,7 +163,7 @@ export default function BlogListPage() {
           transition={{ delay: 1, duration: 1 }}
           className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-white/50 flex flex-col items-center gap-2"
         >
-          <span className="text-[10px] uppercase tracking-[0.3em] font-bold">Discover</span>
+          <span className="text-[10px] tracking-[0.3em] font-bold">Discover</span>
           <div className="w-[1px] h-12 bg-gradient-to-b from-white/50 to-transparent" />
         </motion.div>
       </section>
@@ -193,7 +193,7 @@ export default function BlogListPage() {
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="h-0.5 w-12 bg-[#AD5618]" />
-            <h2 className="text-xl font-bold uppercase text-black/60">Featured Chapter</h2>
+            <h2 className="text-xl font-bold text-black/60">Featured chapter</h2>
           </div>
           {blogPosts.filter(post => post.featured).map((post) => (
             <div key={post.id} className="bg-white rounded-md overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500">
@@ -264,8 +264,8 @@ export default function BlogListPage() {
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="h-0.5 w-12 bg-[#AD5618]" />
-            <h2 className="text-xl font-bold uppercase text-black/60 px-24">
-              {selectedCategory === 'all' ? 'Latest Stories' : `${selectedCategory} Collection`}
+            <h2 className="text-xl font-bold text-black/60 px-24">
+              {selectedCategory === 'all' ? 'Latest stories' : `${selectedCategory} collection`}
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -291,7 +291,7 @@ export default function BlogListPage() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#AD5618] transition-colors line-clamp-2">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 transition-colors line-clamp-2">
                     {post.title}
                   </h3>
 
@@ -301,11 +301,6 @@ export default function BlogListPage() {
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-[#AD5618] to-[#91530A] rounded-md flex items-center justify-center">
-                        <span className="text-white font-semibold text-sm">
-                          {post.author.split(' ').map(n => n[0]).join('')}
-                        </span>
-                      </div>
                       <div>
                         <div className="font-semibold text-gray-900 text-sm">{post.author}</div>
                         <div className="text-xs text-gray-500">{post.role}</div>
@@ -322,7 +317,6 @@ export default function BlogListPage() {
         </div>
       </section>
 
-      {/* Newsletter Signup */}
       <section className="py-20 bg-gradient-to-r from-[#AD5618] to-[#91530A]">
         <div className="container text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Stay Connected with Our Stories</h2>

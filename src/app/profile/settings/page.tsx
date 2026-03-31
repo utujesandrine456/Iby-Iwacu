@@ -61,17 +61,17 @@ export default function AccountSettingsPage() {
       <div className="bg-gradient-to-r from-[#AD5618]/10 to-[#91530A]/10 rounded-2xl p-6 border border-[#AD5618]/20">
         <div className="flex items-center space-x-6">
           <div className="relative">
-            <div className="w-24 h-24 bg-gradient-to-br from-[#AD5618] to-[#91530A] rounded-full flex items-center justify-center text-white text-2xl font-bold">
+            <div className="w-24 h-24 bg-[#AD5618] rounded-full flex items-center justify-center text-white text-2xl font-bold">
               {formData.firstName[0]}{formData.lastName[0]}
             </div>
-            <button className="absolute -bottom-2 -right-2 bg-white p-2 rounded-full shadow-lg border-2 border-purple-200 hover:scale-110 transition-transform">
+            <button className="absolute -bottom-2 -right-2 bg-white p-2 rounded-full shadow-lg border-2 hover:scale-110 transition-transform">
               <Camera className="w-4 h-4 text-[#AD5618]" />
             </button>
           </div>
           <div>
             <h3 className="text-xl font-semibold text-gray-800">Profile Picture</h3>
             <p className="text-gray-600">Upload a new profile picture</p>
-            <button className="mt-2 px-4 py-2 bg-gradient-to-r from-[#AD5618] to-[#91530A] text-white rounded-lg hover:from-[#91530A] hover:to-[#7A4A09] transition-all duration-300 transform hover:scale-105">
+            <button className="mt-2 px-4 py-2 bg-[#AD5618] text-white rounded-lg hover:from-[#91530A] hover:to-[#7A4A09] transition-all duration-300 transform hover:scale-105">
               Change Photo
             </button>
           </div>
@@ -91,7 +91,7 @@ export default function AccountSettingsPage() {
               name="firstName"
               value={formData.firstName}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#AD5618] focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#AD5618] focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white placeholder:text-gray-500"
               placeholder="First name"
             />
           </div>
@@ -101,7 +101,7 @@ export default function AccountSettingsPage() {
               name="lastName"
               value={formData.lastName}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#AD5618] focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#AD5618] focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white placeholder:text-gray-500"
               placeholder="Last name"
             />
           </div>
@@ -112,7 +112,7 @@ export default function AccountSettingsPage() {
               value={formData.email}
               onChange={handleInputChange}
               type="email"
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#AD5618] focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#AD5618] focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white placeholder:text-gray-500"
               placeholder="Email address"
             />
           </div>
@@ -122,7 +122,7 @@ export default function AccountSettingsPage() {
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#AD5618] focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#AD5618] focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white placeholder:text-gray-500"
               placeholder="Phone number"
             />
           </div>
@@ -148,7 +148,7 @@ export default function AccountSettingsPage() {
                 type={showPassword ? "text" : "password"}
                 value={formData.currentPassword}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#AD5618] focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
+                className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#AD5618] focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white placeholder:text-gray-500"
                 placeholder="Enter current password"
               />
               <button
@@ -169,7 +169,7 @@ export default function AccountSettingsPage() {
                   type={showPassword ? "text" : "password"}
                   value={formData.newPassword}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#AD5618] focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
+                  className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#AD5618] focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white placeholder:text-gray-500"
                   placeholder="New password"
                 />
                 <button
@@ -189,7 +189,7 @@ export default function AccountSettingsPage() {
                   type={showConfirmPassword ? "text" : "password"}
                   value={formData.confirmPassword}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#AD5618] focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
+                  className="w-full px-4 py-3 pr-12 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#AD5618] focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white placeholder:text-gray-500"
                   placeholder="Confirm password"
                 />
                 <button
@@ -249,7 +249,7 @@ export default function AccountSettingsPage() {
               name="address"
               value={formData.address}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
+              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white placeholder:text-gray-500"
               placeholder="Enter your street address"
             />
           </div>
@@ -260,7 +260,7 @@ export default function AccountSettingsPage() {
                 name="state"
                 value={formData.state}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white placeholder:text-gray-500"
                 placeholder="State or province"
               />
             </div>
@@ -270,7 +270,7 @@ export default function AccountSettingsPage() {
                 name="zipCode"
                 value={formData.zipCode}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white"
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 bg-gray-50 hover:bg-white placeholder:text-gray-500"
                 placeholder="ZIP or postal code"
               />
             </div>
@@ -364,11 +364,11 @@ export default function AccountSettingsPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 p-6">
+    <div className="min-h-screen p-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">
+          <h1 className="text-4xl font-bold text-black mb-2">
             Account Settings
           </h1>
           <p className="text-gray-600 text-lg">Manage your profile, security, and preferences</p>
@@ -380,9 +380,9 @@ export default function AccountSettingsPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center px-6 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${activeTab === tab.id
-                  ? `bg-gradient-to-r ${tab.color} text-white shadow-lg`
-                  : "bg-white text-gray-600 hover:bg-gray-50 border border-gray-200"
+              className={`flex items-center px-6 py-3 cursor-pointer rounded-md font-medium transition-all duration-300 transform hover:scale-105 ${activeTab === tab.id
+                ? `bg-[#AD5618] text-white shadow-lg`
+                : "bg-white text-gray-600 hover:bg-gray-50 border border-gray-200"
                 }`}
             >
               <tab.icon className="w-5 h-5 mr-2" />
@@ -392,7 +392,7 @@ export default function AccountSettingsPage() {
         </div>
 
         {/* Tab Content */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-xl">
+        <div className="bg-white/80 backdrop-blur-sm rounded-lg p-8 border border-white/20 shadow-xl">
           {activeTab === "profile" && renderProfileTab()}
           {activeTab === "security" && renderSecurityTab()}
           {activeTab === "address" && renderAddressTab()}
@@ -403,7 +403,7 @@ export default function AccountSettingsPage() {
         <div className="text-center mt-8">
           <button
             onClick={handleSubmit}
-            className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center mx-auto"
+            className="px-8 py-4 text-white cursor-pointer font-semibold rounded-lg bg-black transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center mx-auto"
           >
             <Save className="w-5 h-5 mr-2" />
             Save All Changes
