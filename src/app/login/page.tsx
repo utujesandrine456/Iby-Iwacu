@@ -64,10 +64,10 @@ export default function LoginPage() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/20"
+              className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-md border border-white/20"
             >
               <Image src="/Logoibyiwacu.png" alt="Logo" width={28} height={28} className="rounded-md" />
-              <span className="text-white font-extrabold text-lg tracking-tight">Iby&apos;<span className="text-[#eb8034]">Iwacu</span></span>
+              <span className="text-white font-extrabold text-2xl tracking-tight">Iby&apos;<span className="text-[#eb8034]">Iwacu</span></span>
             </motion.div>
           </div>
 
@@ -85,7 +85,7 @@ export default function LoginPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="text-white/70 text-lg leading-relaxed font-medium"
+              className="text-white/70 text-md leading-relaxed font-medium"
             >
               Sign in to your portal and explore the finest handcrafted items from Rwanda&apos;s most skilled artisans.
             </motion.p>
@@ -93,10 +93,7 @@ export default function LoginPage() {
         </motion.div>
       </div>
 
-      {/* ── Right Side: Minimalist High-End Form (40%) ───────────── */}
       <div className="flex-1 h-full flex items-center justify-center relative p-6 bg-white lg:bg-transparent">
-
-        {/* mobile logo - only shows below lg */}
         <div className="lg:hidden absolute top-10 left-1/2 -translate-x-1/2 flex items-center gap-2">
           <Image src="/Logoibyiwacu.png" alt="Logo" width={40} height={40} className="rounded-xl shadow-lg" />
           <h1 className="text-2xl font-black text-gray-900">Iby&apos;<span className="text-[#AD5618]">Iwacu</span></h1>
@@ -108,10 +105,9 @@ export default function LoginPage() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="w-full max-w-[420px] space-y-12"
         >
-          {/* Header */}
           <div className="space-y-2">
-            <h3 className="text-4xl font-extrabold text-gray-900">Welcome Back</h3>
-            <p className="text-gray-500 text-md font-medium">Please enter your account details to continue.</p>
+            <h3 className="text-4xl font-extrabold text-[#AD5618]">Welcome Back</h3>
+            <p className="text-gray-500 text-md font-normal">Please enter your account details to continue.</p>
           </div>
 
           {/* Form */}
@@ -196,8 +192,8 @@ export default function LoginPage() {
               whileTap={{ scale: 0.99 }}
               disabled={!isFormValid || isSubmitting}
               type="submit"
-              className={`w-full py-4 rounded-md font-semibold text-md flex items-center justify-center gap-3 transition-all ${isFormValid && !isSubmitting
-                ? "bg-[#AD5618] hover:bg-[#91530A] text-white"
+              className={`w-full py-4 rounded-md font-semibold cursor-pointer text-md flex items-center justify-center gap-3 transition-all ${isFormValid && !isSubmitting
+                ? "bg-[#AD5618] text-white"
                 : "bg-gray-100 text-gray-400 cursor-not-allowed"
                 }`}
             >

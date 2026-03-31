@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "@/components/AuthProvider";
-import { Eye, EyeOff, Mail, Lock, User, ArrowRight, UserPlus, Sparkles } from "lucide-react";
+import { Eye, EyeOff, Mail, Lock, User, ArrowRight } from "lucide-react";
 
 export default function SignupPage() {
   const { signup } = useAuth();
@@ -69,10 +69,10 @@ export default function SignupPage() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/20"
+              className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-md border border-white/20"
             >
               <Image src="/Logoibyiwacu.png" alt="Logo" width={28} height={28} className="rounded-md" />
-              <span className="text-white font-extrabold text-lg tracking-tight">Iby&apos;<span className="text-[#eb8034]">Iwacu</span></span>
+              <span className="text-white font-extrabold text-2xl tracking-tight">Iby&apos;<span className="text-[#eb8034]">Iwacu</span></span>
             </motion.div>
           </div>
 
@@ -98,10 +98,7 @@ export default function SignupPage() {
         </motion.div>
       </div>
 
-      {/* ── Left Side: Minimalist High-End Form (40%) ────────────── */}
       <div className="flex-1 h-full flex items-center justify-center relative p-6 bg-white lg:bg-transparent">
-
-        {/* mobile logo - only shows below lg */}
         <div className="lg:hidden absolute top-10 left-1/2 -translate-x-1/2 flex items-center gap-2">
           <Image src="/Logoibyiwacu.png" alt="Logo" width={40} height={40} className="rounded-xl shadow-lg" />
           <h1 className="text-2xl font-black text-gray-900">Iby&apos;<span className="text-[#AD5618]">Iwacu</span></h1>
@@ -113,13 +110,11 @@ export default function SignupPage() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="w-full max-w-[420px] space-y-10"
         >
-          {/* Header */}
-          <div className="space-y-4">
-            <h3 className="text-4xl font-extrabold text-gray-900 leading-tight">Create your account</h3>
-            <p className="text-gray-500 text-md font-medium">Discover your artistic potential today.</p>
+          <div className="space-y-2">
+            <h3 className="text-4xl font-extrabold text-[#AD5618]">Create your account</h3>
+            <p className="text-gray-500 text-md font-normal">Discover your artistic potential today.</p>
           </div>
 
-          {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-5">
             <AnimatePresence>
               {error && (
@@ -127,7 +122,7 @@ export default function SignupPage() {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="p-4 bg-red-50 border border-red-100 rounded-md text-red-600 text-xs font-semibold flex items-center gap-3"
+                  className="p-4 bg-red-50 border border-red-100 rounded-sm text-red-600 text-xs font-semibold flex items-center gap-3"
                 >
                   <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse shrink-0" />
                   {error}
@@ -223,8 +218,8 @@ export default function SignupPage() {
               whileTap={{ scale: 0.99 }}
               disabled={!isFormValid || isSubmitting}
               type="submit"
-              className={`w-full py-4 rounded-md font-semibold text-md flex items-center justify-center gap-3 transition-all ${isFormValid && !isSubmitting
-                ? "bg-[#AD5618] hover:bg-[#91530A] text-white"
+              className={`w-full py-4 rounded-md font-semibold cursor-pointer text-md flex items-center justify-center gap-3 transition-all ${isFormValid && !isSubmitting
+                ? "bg-[#AD5618] text-white"
                 : "bg-gray-100 text-gray-400 cursor-not-allowed"
                 }`}
             >
@@ -239,7 +234,6 @@ export default function SignupPage() {
             </motion.button>
           </form>
 
-          {/* Footer inside panel */}
           <div className="pt-4 text-center">
             <p className="text-md font-medium text-gray-500">
               Already a member?{" "}

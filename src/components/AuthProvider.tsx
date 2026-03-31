@@ -52,7 +52,7 @@ function getSession(): string | null {
 
 async function hashPassword(password: string): Promise<string> {
   if (typeof window === "undefined" || !window.crypto?.subtle) {
-    return `plain:${password}`; // fallback in environments without WebCrypto
+    return `plain:${password}`;
   }
   const enc = new TextEncoder().encode(password);
   const digest = await window.crypto.subtle.digest("SHA-256", enc);
@@ -112,7 +112,7 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
     setSession(null);
     setUser(null);
     if (typeof window !== "undefined") {
-      window.location.href = "/"; // redirect out of dashboard or any protected view
+      window.location.href = "/";
     }
   }, []);
 

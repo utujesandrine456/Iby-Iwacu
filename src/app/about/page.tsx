@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Target, Star, Users, Heart, MapPin } from "lucide-react";
+import { Target, Star, Users, Heart, MapPin, Linkedin, Twitter, Mail } from "lucide-react";
 import Image from "next/image";
 
 const fadeInUp = {
@@ -114,7 +114,7 @@ export default function AboutPage() {
               <motion.p
                 variants={fadeInUp}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-2xl opacity-90 max-w-4xl mx-auto leading-relaxed mb-10 drop-shadow-md"
+                className="text-xl opacity-90 max-w-4xl mx-auto leading-relaxed mb-10 drop-shadow-md"
               >
                 Connecting Rwanda&apos;s rich cultural heritage with the world through authentic craftsmanship,
                 sustainable practices, and meaningful partnerships with local artisans.
@@ -290,7 +290,7 @@ export default function AboutPage() {
                 <Target className="w-12 h-12 text-white" />
               </div>
               <h3 className="text-3xl font-extrabold mb-6">Our Mission</h3>
-              <p className="text-xl leading-relaxed opacity-90">
+              <p className="text-lg leading-relaxed opacity-90">
                 To empower Rwandan artisans by connecting them with global markets,
                 ensuring fair compensation while preserving traditional craftsmanship
                 and promoting sustainable economic growth.
@@ -498,18 +498,54 @@ export default function AboutPage() {
                 key={index}
                 variants={fadeInUp}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="text-center bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition-all duration-300"
+                className="group relative cursor-pointer"
               >
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="w-32 h-32 bg-[#AD5618] rounded-full mx-auto mb-6 flex items-center justify-center text-white text-4xl font-bold"
-                >
-                  {member.name.split(' ').map(n => n[0]).join('')}
-                </motion.div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                <p className="text-lg font-semibold text-[#AD5618] mb-4">{member.role}</p>
-                <p className="text-gray-600 leading-relaxed">{member.description}</p>
+                <div className="relative bg-white rounded-3xl p-8 transition-all duration-500 overflow-hidden border border-gray-100 group-hover:border-[#AD5618]/20 shadow-sm group-hover:shadow-2xl group-hover:-translate-y-2">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#AD5618]/5 rounded-bl-full -mr-16 -mt-16 transition-all duration-500 group-hover:w-40 group-hover:h-40" />
+
+                  <div className="relative w-40 h-40 mx-auto mb-8">
+                    <div className="absolute inset-0 bg-[#AD5618] rounded-2xl rotate-6 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-105" />
+                    <div className="relative w-full h-full bg-gray-200 rounded-2xl overflow-hidden shadow-lg transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-105">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    <div className="absolute -bottom-4 right-0 flex flex-col gap-2 translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                      {[
+                        { icon: <Linkedin className="w-4 h-4" />, color: "bg-[#0077b5]" },
+                        { icon: <Twitter className="w-4 h-4" />, color: "bg-[#1da1f2]" },
+                        { icon: <Mail className="w-4 h-4" />, color: "bg-[#AD5618]" }
+                      ].map((item, i) => (
+                        <motion.a
+                          key={i}
+                          href="#"
+                          whileHover={{ scale: 1.2 }}
+                          whileTap={{ scale: 0.9 }}
+                          className={`${item.color} text-white p-2.5 rounded-xl shadow-lg`}
+                        >
+                          {item.icon}
+                        </motion.a>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2 transition-colors duration-300 group-hover:text-[#AD5618]">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm font-bold text-[#AD5618] tracking-wider mb-4 opacity-80">
+                      {member.role}
+                    </p>
+                    <div className="h-px w-12 bg-gray-200 mx-auto mb-4 group-hover:w-20 group-hover:bg-[#AD5618]/30 transition-all duration-500" />
+                    <p className="text-gray-500 leading-relaxed text-sm">
+                      {member.description}
+                    </p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </motion.div>
