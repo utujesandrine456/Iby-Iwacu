@@ -86,7 +86,7 @@ export default function ContactPage() {
               className="inline-flex items-center gap-2 bg-[#AD5618]/20 border border-[#AD5618]/40 backdrop-blur-sm px-4 py-2 rounded-md mb-6"
             >
               <span className="w-2 h-2 bg-[#eb8034] rounded-full animate-pulse" />
-              <span className="text-[#eb8034] font-semibold uppercase tracking-widest text-xs">
+              <span className="text-[#eb8034] font-semibold tracking-widest text-xs">
                 We&apos;d love to hear from you
               </span>
             </motion.div>
@@ -149,7 +149,7 @@ export default function ContactPage() {
           className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 cursor-pointer"
           onClick={() => document.getElementById("contact-section")?.scrollIntoView({ behavior: "smooth" })}
         >
-          <span className="text-white/50 text-xs uppercase tracking-widest">Scroll</span>
+          <span className="text-white/50 text-xs tracking-widest">Scroll</span>
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-1.5">
             <motion.div
               className="w-1 h-2 bg-white/60 rounded-full"
